@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap');
+@import 'tailwindcss';
+
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+@theme {
+  --color-background: #161721;
+  --color-foreground: #f4f866;
+  --color-muted-foreground: #f4f866;
+  --color-card: #161721;
+  --color-primary: #f4f866;
+  --color-primary-foreground: #ffffff;
+  --color-secondary: #161721;
+  --color-secondary-foreground: #ffffff;
+  --color-accent: #d42430;
+  --font-instrument-serif: 'Instrument Serif', serif;
+}
+
+[data-theme='dark'] {
+  --color-background: #f4f866;
+  --color-foreground: #161721;
+  --color-muted-foreground: #161721;
+  --color-card: #f4f866;
+  --color-primary: #f4f866;
+  --color-primary-foreground: #ffffff;
+  --color-secondary: #161721;
+  --color-secondary-foreground: #ffffff;
+  --color-accent: #d42430;
+}
+
+@layer components {
+  h1,
+  .heading-1 {
+    @apply text-7xl md:text-[150px] xl:text-[200px] font-medium leading-relaxed;
+  }
+
+  h2,
+  .heading-2 {
+    @apply text-4xl md:text-7xl font-bold leading-snug text-center;
+  }
+
+  h3,
+  .heading-3 {
+    @apply text-2xl font-semibold leading-snug;
+  }
+
+  h4,
+  .heading-4 {
+    @apply text-xl font-medium;
+  }
+
+  .text-body {
+    @apply text-base sm:text-lg leading-relaxed;
+  }
+
+  .text-small {
+    @apply text-sm;
+  }
+
+  .text-tiny {
+    @apply text-xs;
+  }
+}
+
+:root {
+  --font-sans: var(--font-instrument-serif);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-background);
+  border-radius: 20px;
+  border: 2px solid transparent;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--color-background);
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-foreground) transparent;
+}
