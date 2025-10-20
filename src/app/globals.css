@@ -1,47 +1,47 @@
-@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 @import 'tailwindcss';
 
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
 @theme {
-  --color-background: #161721;
-  --color-foreground: #f4f866;
-  --color-muted-foreground: #f4f866;
-  --color-card: #161721;
-  --color-primary: #f4f866;
+  --color-background: #f9fafb;
+  --color-foreground: #0f172a;
+  --color-muted-foreground: #64748b;
+  --color-card: #ffffff;
+  --color-primary: #2563eb;
   --color-primary-foreground: #ffffff;
-  --color-secondary: #161721;
-  --color-secondary-foreground: #ffffff;
-  --color-accent: #d42430;
-  --font-instrument-serif: 'Instrument Serif', serif;
+  --color-secondary: #f3f4f6;
+  --color-secondary-foreground: #111827;
+  --color-accent: #06b6d4;
+  --font-poppins: 'Poppins', sans-serif;
 }
 
 [data-theme='dark'] {
-  --color-background: #f4f866;
-  --color-foreground: #161721;
-  --color-muted-foreground: #161721;
-  --color-card: #f4f866;
-  --color-primary: #f4f866;
+  --color-background: #0f172a;
+  --color-foreground: #f8fafc;
+  --color-muted-foreground: #94a3b8;
+  --color-card: #1e293b;
+  --color-primary: #3b82f6;
   --color-primary-foreground: #ffffff;
-  --color-secondary: #161721;
-  --color-secondary-foreground: #ffffff;
-  --color-accent: #d42430;
+  --color-secondary: #1e293b;
+  --color-secondary-foreground: #f9fafb;
+  --color-accent: #22d3ee;
 }
 
 @layer components {
   h1,
   .heading-1 {
-    @apply text-7xl md:text-[150px] xl:text-[200px] font-medium leading-relaxed;
+    @apply text-5xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tight;
   }
 
   h2,
   .heading-2 {
-    @apply text-4xl md:text-7xl font-bold leading-snug text-center;
+    @apply text-3xl md:text-5xl font-semibold leading-snug;
   }
 
   h3,
   .heading-3 {
-    @apply text-2xl font-semibold leading-snug;
+    @apply text-2xl font-semibold;
   }
 
   h4,
@@ -50,41 +50,39 @@
   }
 
   .text-body {
-    @apply text-base sm:text-lg leading-relaxed;
+    @apply text-base md:text-lg leading-relaxed text-muted-foreground;
   }
 
   .text-small {
-    @apply text-sm;
+    @apply text-sm text-muted-foreground;
   }
 
   .text-tiny {
-    @apply text-xs;
+    @apply text-xs text-muted-foreground;
+  }
+
+  /* Buttons */
+  .btn-primary {
+    @apply bg-primary text-primary-foreground font-medium px-6 py-3 rounded-xl hover:bg-blue-600 transition-all;
+  }
+
+  .btn-secondary {
+    @apply bg-secondary text-secondary-foreground font-medium px-6 py-3 rounded-xl hover:bg-gray-300 dark:hover:bg-slate-700 transition-all;
+  }
+
+  .btn-accent {
+    @apply bg-accent text-white font-medium px-6 py-3 rounded-xl hover:opacity-90 transition-all;
   }
 }
 
 :root {
-  --font-sans: var(--font-instrument-serif);
+  --font-sans: var(--font-poppins);
 }
 
 ::-webkit-scrollbar {
   width: 8px;
 }
-
-::-webkit-scrollbar-track {
-  background: transparent;
-}
-
 ::-webkit-scrollbar-thumb {
-  background-color: var(--color-background);
+  background-color: var(--color-muted-foreground);
   border-radius: 20px;
-  border: 2px solid transparent;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background-color: var(--color-background);
-}
-
-* {
-  scrollbar-width: thin;
-  scrollbar-color: var(--color-foreground) transparent;
 }

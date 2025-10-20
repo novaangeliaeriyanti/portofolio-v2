@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import { ThemeProvider } from 'next-themes';
-import './globals.css';
+import '../globals.css';
+import Header from '@/components/layout/Header';
+import Footer from '@/components/layout/Footer';
 
 export const metadata: Metadata = {
   title: 'My Portfolio',
@@ -20,7 +22,11 @@ export default function RootLayout({
           defaultTheme="system"
           attribute="data-theme"
         >
-          {children}
+          <div className="min-h-screen flex flex-col bg-background text-foreground">
+            <Header />
+            <main className="flex-1">{children}</main>
+            <Footer />
+          </div>
         </ThemeProvider>
       </body>
     </html>
