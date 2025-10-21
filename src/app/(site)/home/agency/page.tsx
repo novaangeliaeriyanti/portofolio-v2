@@ -17,7 +17,7 @@ export default function AgencyHomePage() {
             transition={{ duration: 0.6 }}
             className="text-5xl md:text-7xl font-extrabold text-white leading-tight"
           >
-            We’re the <span className="text-sky-400">Agency</span>  
+            We’re the <span className="text-sky-400">Agency</span>
             <br /> that <span className="text-pink-500">Builds Brands</span>
           </motion.h1>
 
@@ -27,8 +27,8 @@ export default function AgencyHomePage() {
             transition={{ delay: 0.3 }}
             className="mt-6 text-lg text-slate-300 max-w-md mx-auto md:mx-0"
           >
-            From bold visual identities to stunning digital experiences —  
-            we help brands grow with purpose and personality.
+            From bold visual identities to stunning digital experiences — we
+            help brands grow with purpose and personality.
           </motion.p>
 
           <motion.div
@@ -75,10 +75,26 @@ export default function AgencyHomePage() {
         <h2 className="text-4xl font-bold mb-12">Our Creative Process</h2>
         <div className="grid md:grid-cols-4 gap-10">
           {[
-            { step: '01', title: 'Discover', desc: 'We dive deep into your brand to understand its essence.' },
-            { step: '02', title: 'Design', desc: 'Our team creates bold visuals that communicate clearly.' },
-            { step: '03', title: 'Develop', desc: 'We build functional, high-performance digital products.' },
-            { step: '04', title: 'Deliver', desc: 'We launch and refine to make sure your brand shines.' },
+            {
+              step: '01',
+              title: 'Discover',
+              desc: 'We dive deep into your brand to understand its essence.',
+            },
+            {
+              step: '02',
+              title: 'Design',
+              desc: 'Our team creates bold visuals that communicate clearly.',
+            },
+            {
+              step: '03',
+              title: 'Develop',
+              desc: 'We build functional, high-performance digital products.',
+            },
+            {
+              step: '04',
+              title: 'Deliver',
+              desc: 'We launch and refine to make sure your brand shines.',
+            },
           ].map((item, i) => (
             <motion.div
               key={i}
@@ -87,7 +103,9 @@ export default function AgencyHomePage() {
               transition={{ delay: i * 0.1 }}
               className="p-8 border border-border/30 rounded-2xl bg-card hover:bg-accent/5 transition"
             >
-              <span className="block text-4xl font-bold text-primary mb-2">{item.step}</span>
+              <span className="block text-4xl font-bold text-primary mb-2">
+                {item.step}
+              </span>
               <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
               <p className="text-muted-foreground">{item.desc}</p>
             </motion.div>
@@ -114,7 +132,9 @@ export default function AgencyHomePage() {
 
       {/* FEATURED PROJECTS */}
       <section className="py-24 px-6 md:px-16 bg-background">
-        <h2 className="text-4xl font-bold text-center mb-12">Featured Projects</h2>
+        <h2 className="text-4xl font-bold text-center mb-12">
+          Featured Projects
+        </h2>
         <div className="grid md:grid-cols-2 gap-12">
           {[
             { title: 'Bold Agency Rebrand', img: '/images/agency-work1.webp' },
@@ -133,7 +153,9 @@ export default function AgencyHomePage() {
                 className="object-cover w-full h-[350px] transition-transform duration-500 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
-                <span className="text-white font-semibold text-lg">{project.title}</span>
+                <span className="text-white font-semibold text-lg">
+                  {project.title}
+                </span>
               </div>
             </motion.div>
           ))}
@@ -142,7 +164,9 @@ export default function AgencyHomePage() {
 
       {/* CTA */}
       <section className="py-24 px-6 text-center bg-gradient-to-br from-sky-600 to-pink-600 text-white">
-        <h2 className="text-4xl font-bold mb-4">Let’s Make Your Brand Unforgettable</h2>
+        <h2 className="text-4xl font-bold mb-4">
+          Let’s Make Your Brand Unforgettable
+        </h2>
         <p className="text-lg mb-8 opacity-90">
           We’re ready to collaborate, innovate, and bring your ideas to life.
         </p>

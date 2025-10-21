@@ -86,3 +86,7 @@
   background-color: var(--color-muted-foreground);
   border-radius: 20px;
 }
+
+.section-hero {
+  clip-path: ellipse(120% 90% at 50% 0%);
+}

@@ -3,46 +3,35 @@
 import Image from 'next/image';
 import Container from '@/components/ui/Container';
 import projects from '@/data/projects';
+import Card from '../ui/Card';
 
 export default function ProjectShowcase() {
   return (
-    <section className="py-20 bg-card">
-      <Container className="max-w-6xl mx-auto">
-        <h2 className="heading-3 text-center mb-10">Recent Projects</h2>
-        <div className="grid md:grid-cols-2 gap-10">
-          {projects.map((item, i) => (
-            <div
-              key={i}
-              className="group border border-foreground/10 rounded-xl overflow-hidden hover:shadow-lg transition"
-            >
-              <div className="relative h-60">
-                <Image
-                  src={item.image}
-                  alt={item.name}
-                  fill
-                  className="object-cover group-hover:scale-105 transition"
-                />
-              </div>
-              <div className="p-5 space-y-2">
-                <h3 className="font-semibold">{item.name}</h3>
-                <p className="text-small text-muted-foreground">
-                  {item.description}
-                </p>
-                <div className="flex flex-wrap gap-2 mt-3">
-                  {item.stack.map((tech: string, j: number) => (
-                    <span
-                      key={j}
-                      className="px-3 py-1 text-tiny font-semibold rounded-full bg-accent text-background"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </Container>
+    <section
+      className=" bg-card bg-cover bg-center bg-fixed"
+      style={{
+        backgroundImage:
+          "url('https://images.unsplash.com/photo-1519389950473-47ba0277781c')",
+      }}
+    >
+      <div className="bg-black/50 py-20">
+        <Container className="max-w-6xl mx-auto relative z-10">
+          <h2 className="heading-3 text-center mb-10 text-white">
+            Recent Projects
+          </h2>
+          <div className="grid md:grid-cols-2 gap-10">
+            {projects.map((item, i) => (
+              <Card
+                key={i}
+                image={item.image}
+                name={item.name}
+                description={item.description}
+                stack={item.stack}
+              />
+            ))}
+          </div>
+        </Container>
+      </div>
     </section>
   );
 }

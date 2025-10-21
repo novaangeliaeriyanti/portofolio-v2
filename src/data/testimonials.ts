@@ -1,27 +1,45 @@
 const testimonials = [
   {
-    client: 'Nova Studio',
-    rating: '98%',
+    client: 'Sarah Johnson',
+    rating: '5/5',
     feedback:
-      'Outstanding work and communication! The final product exceeded expectations.',
-    stack: ['Next.js', 'Figma', 'Framer Motion'],
-    image: '/images/clients/nova-studio.webp',
+      'Absolutely amazing service! The team was professional and exceeded my expectations.',
+    image: '/images/clients/client1.jpg',
   },
   {
-    client: 'GreenLeaf Co.',
-    rating: '96%',
+    client: 'Michael Lee',
+    rating: '4.8/5',
     feedback:
-      'Delivered ahead of schedule with great attention to detail and performance.',
-    stack: ['React', 'Tailwind CSS', 'Vite'],
-    image: '/images/clients/greenleaf.webp',
+      'They helped us launch our website on time with great design and performance.',
+    image: '/images/clients/client2.jpg',
   },
   {
-    client: 'SmartFinance',
-    rating: '92%',
+    client: 'Jessica Chen',
+    rating: '5/5',
     feedback:
-      'Very professional and creative. Brought our complex requirements to life smoothly.',
-    stack: ['Vue.js', 'Chart.js', 'Supabase'],
-    image: '/images/clients/smartfinance.webp',
+      'Highly recommended! Very creative and responsive throughout the project.',
+    image: '/images/clients/client3.jpg',
+  },
+  {
+    client: 'David Kim',
+    rating: '4.9/5',
+    feedback:
+      'The results were fantastic! Our customers love the new interface.',
+    image: '/images/clients/client4.jpg',
+  },
+  {
+    client: 'Jessica Chen',
+    rating: '5/5',
+    feedback:
+      'Highly recommended! Very creative and responsive throughout the project.',
+    image: '/images/clients/client3.jpg',
+  },
+  {
+    client: 'David Kim',
+    rating: '4.9/5',
+    feedback:
+      'The results were fantastic! Our customers love the new interface.',
+    image: '/images/clients/client4.jpg',
   },
 ];
 

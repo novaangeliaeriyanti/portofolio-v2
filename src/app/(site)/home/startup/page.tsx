@@ -15,7 +15,8 @@ export default function StartupHomePage() {
           transition={{ duration: 0.6 }}
           className="text-5xl md:text-7xl font-extrabold text-white max-w-4xl leading-tight"
         >
-          Build the Future, <br /> <span className="text-sky-400">One Startup at a Time</span>
+          Build the Future, <br />{' '}
+          <span className="text-sky-400">One Startup at a Time</span>
         </motion.h1>
 
         <motion.p
@@ -24,7 +25,8 @@ export default function StartupHomePage() {
           transition={{ delay: 0.3 }}
           className="mt-6 text-lg text-slate-300 max-w-xl"
         >
-          We help visionary founders launch, scale, and dominate their markets — from idea to IPO.
+          We help visionary founders launch, scale, and dominate their markets —
+          from idea to IPO.
         </motion.p>
 
         <motion.div
@@ -126,7 +128,9 @@ export default function StartupHomePage() {
 
       {/* INVESTORS */}
       <section className="py-16 bg-background text-center">
-        <h2 className="text-3xl font-bold mb-8">Backed by World-Class Investors</h2>
+        <h2 className="text-3xl font-bold mb-8">
+          Backed by World-Class Investors
+        </h2>
         <div className="flex flex-wrap justify-center gap-10 opacity-80">
           {['sequoia', 'a16z', 'ycombinator', 'softbank'].map((logo, i) => (
             <Image
@@ -145,7 +149,8 @@ export default function StartupHomePage() {
       <section className="py-24 px-6 text-center bg-gradient-to-br from-sky-600 to-indigo-600 text-white">
         <h2 className="text-4xl font-bold mb-4">Ready to Scale Your Vision?</h2>
         <p className="text-lg mb-8 opacity-90">
-          Whether you’re pre-seed or Series C, our team is here to accelerate your growth.
+          Whether you’re pre-seed or Series C, our team is here to accelerate
+          your growth.
         </p>
         <Link
           href="/contact"
