@@ -19,7 +19,7 @@ export default function RootLayout({
       <body className="antialiased">
         <ThemeProvider
           enableSystem={true}
-          defaultTheme="system"
+          defaultTheme="light"
           attribute="data-theme"
         >
           <div className="min-h-screen flex flex-col bg-background text-foreground">

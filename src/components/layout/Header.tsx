@@ -7,6 +7,7 @@ import { Menu, X, ChevronDown } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Logo from '../ui/Logo';
 import { navLinks } from '@/data/navbar';
+import ThemeToggle from '../ui/ThemeToggle';
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -181,6 +182,7 @@ export default function Header() {
                 )}
               </div>
             ))}
+            <ThemeToggle />
           </nav>
 
           <button
