@@ -18,7 +18,7 @@ export default function FAQSection() {
     >
       <div className="bg-black/50 py-24">
         <Container className="max-w-6xl mx-auto ">
-          <h2 className="heading-3 text-4xl font-bold text-center mb-12 text-background">
+          <h2 className="heading-3 text-4xl font-bold text-center mb-12 text-background dark:text-foreground">
             Frequently Asked Questions
           </h2>
 

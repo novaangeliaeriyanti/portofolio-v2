@@ -60,7 +60,7 @@ export default function Testimonials() {
         />
       </div>
       <Container className="max-w-6xl mx-auto space-y-20 relative z-10">
-        <h2 className="heading-3 text-4xl font-bold text-center mb-12">
+        <h2 className="heading-3 text-4xl font-bold text-center mb-12 text-foreground dark:text-background">
           What Do Our Clients Say?
         </h2>
         <div className="relative overflow-hidden">

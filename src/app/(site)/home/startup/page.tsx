@@ -4,7 +4,7 @@ import AboutSection from '@/components/sections/home2/AboutSection';
 import ClientSection from '@/components/sections/home2/ClientSection';
 import FAQSection from '@/components/sections/home2/FAQSection';
 import HeroStartup from '@/components/sections/home2/HeroStartup';
-import LatestBlog from '@/components/sections/home2/LatestBlog';
+import LatestBlog from '@/components/sections/shared/LatestBlog';
 import ProjectShowcase from '@/components/sections/home2/ProjectShowcase';
 import ServicesSection from '@/components/sections/home2/ServicesSection';
 import Testimonials from '@/components/sections/home2/Testimonials';

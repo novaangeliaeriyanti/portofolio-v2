@@ -45,7 +45,9 @@ export default function Card({
         )}
       >
         <p className="text-xs text-muted-foreground mt-3">{subdesc}</p>
-        <h3 className="font-semibold">{name}</h3>
+        <h3 className="font-semibold text-foreground dark:text-background">
+          {name}
+        </h3>
         <p className="text-sm text-muted-foreground line-clamp-3">
           {description}
         </p>

@@ -32,7 +32,9 @@ export default function LatestBlog() {
   return (
     <section className="relative py-20 bg-white">
       <div className="container mx-auto max-w-6xl px-6 space-y-16">
-        <h2 className="text-4xl font-bold text-center mb-12">Latest Blog</h2>
+        <h2 className="text-4xl font-bold text-center mb-12 text-foreground dark:text-background">
+          Latest Blog
+        </h2>
 
         <div className="relative">
           <AnimatePresence mode="wait">
