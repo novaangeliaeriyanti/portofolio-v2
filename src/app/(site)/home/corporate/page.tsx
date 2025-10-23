@@ -1,26 +1,19 @@
-import HeroCorporate from '@/components/sections/hero/HeroCorporate';
-import AboutSection from '@/components/sections/AboutSection';
-import ServicesSection from '@/components/sections/ServicesSection';
-import ProjectShowcase from '@/components/sections/ProjectShowcase';
-import Testimonials from '@/components/sections/Testimonials';
-import CTASection from '@/components/sections/CTASection';
-import ClientSection from '@/components/sections/ClientSection';
-import FAQSection from '@/components/sections/FAQSection';
-import LatestBlog from '@/components/sections/LatestBlog';
-
-const logos = [
-  '/images/logo/logo1.png',
-  '/images/logo/logo1.png',
-  '/images/logo/logo1.png',
-  '/images/logo/logo1.png',
-  '/images/logo/logo1.png',
-];
+import AboutSection from '@/components/sections/home1/AboutSection';
+import ClientSection from '@/components/sections/home1/ClientSection';
+import CTASection from '@/components/sections/shared/CTASection';
+import FAQSection from '@/components/sections/home1/FAQSection';
+import HeroCorporate from '@/components/sections/home1/HeroCorporate';
+import LatestBlog from '@/components/sections/home1/LatestBlog';
+import ProjectShowcase from '@/components/sections/home1/ProjectShowcase';
+import ServicesSection from '@/components/sections/home1/ServicesSection';
+import Testimonials from '@/components/sections/home1/Testimonials';
+import { clients } from '@/data/clients';
 export default function CorporateHomePage() {
   return (
     <>
       <HeroCorporate />
       <AboutSection />
-      <ClientSection logos={logos} />
+      <ClientSection logos={clients.logos} />
       <ServicesSection />
       <ProjectShowcase />
       <Testimonials />

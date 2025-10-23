@@ -1,45 +1,51 @@
 const testimonials = [
   {
-    client: 'Sarah Johnson',
-    rating: '5/5',
-    feedback:
-      'Absolutely amazing service! The team was professional and exceeded my expectations.',
-    image: '/images/clients/client1.jpg',
-  },
-  {
-    client: 'Michael Lee',
+    client: 'Laura Adams',
     rating: '4.8/5',
     feedback:
       'They helped us launch our website on time with great design and performance.',
-    image: '/images/clients/client2.jpg',
+    image:
+      'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=688',
   },
   {
-    client: 'Jessica Chen',
+    client: 'Christoper Dawn',
     rating: '5/5',
     feedback:
       'Highly recommended! Very creative and responsive throughout the project.',
-    image: '/images/clients/client3.jpg',
+    image:
+      'https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=687',
   },
   {
-    client: 'David Kim',
-    rating: '4.9/5',
+    client: 'Laura Adams',
+    rating: '4.8/5',
     feedback:
-      'The results were fantastic! Our customers love the new interface.',
-    image: '/images/clients/client4.jpg',
+      'They helped us launch our website on time with great design and performance.',
+    image:
+      'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=688',
   },
   {
-    client: 'Jessica Chen',
+    client: 'Christoper Dawn',
     rating: '5/5',
     feedback:
       'Highly recommended! Very creative and responsive throughout the project.',
-    image: '/images/clients/client3.jpg',
+    image:
+      'https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=687',
   },
   {
-    client: 'David Kim',
-    rating: '4.9/5',
+    client: 'Christoper Dawn',
+    rating: '5/5',
     feedback:
-      'The results were fantastic! Our customers love the new interface.',
-    image: '/images/clients/client4.jpg',
+      'Highly recommended! Very creative and responsive throughout the project.',
+    image:
+      'https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=687',
+  },
+  {
+    client: 'Christoper Dawn',
+    rating: '5/5',
+    feedback:
+      'Highly recommended! Very creative and responsive throughout the project.',
+    image:
+      'https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=687',
   },
 ];
 

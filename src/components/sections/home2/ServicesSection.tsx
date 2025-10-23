@@ -3,8 +3,8 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Container from '@/components/ui/Container';
-import servicesData, { Service } from '@/data/services';
 import * as LucideIcons from 'lucide-react';
+import services, { Service } from '@/data/services';
 
 export default function ServicesSection() {
   return (
@@ -40,7 +40,7 @@ export default function ServicesSection() {
           Our Services
         </h2>
 
-        {servicesData.map((service: Service, i: number) => {
+        {services.items.map((service: Service, i: number) => {
           const IconComponent = LucideIcons[service.icon];
 
           return (

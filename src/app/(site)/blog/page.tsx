@@ -1,15 +1,15 @@
+'use client';
+
 import Link from 'next/link';
-import Image from 'next/image';
+import { motion } from 'framer-motion';
 import PageTitle from '@/components/ui/PageTitle';
 import Card from '@/components/ui/Card';
-import { blogPosts } from '@/data/posts';
-
-export const metadata = {
-  title: 'Blog — YourCompany',
-  description: 'Read the latest articles and insights from our team.',
-};
+import { blogPosts, categories } from '@/data/posts';
+import SidebarBlog from '@/components/sections/shared/SidebarBlog';
 
 export default function BlogPage() {
+  const recentPosts = blogPosts.slice(0, 3);
+
   return (
     <>
       <PageTitle
@@ -17,24 +17,30 @@ export default function BlogPage() {
         backgroundImage="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1600&q=80"
         align="center"
       />
-      <section className="container mx-auto px-6 py-16">
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
+
+      <section className="container mx-auto max-w-6xl px-6 py-16 grid lg:grid-cols-[2fr_1fr] gap-10">
+        <div className="space-y-10">
           {blogPosts.map((post, i) => (
-            <Link
+            <motion.div
               key={i}
-              href={`/blog/modern-brand-strategy`}
-              className="group block"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: i * 0.1 }}
             >
-              <Card
-                key={i}
-                image={post.image}
-                name={post.title}
-                description={post.excerpt}
-                subdesc={post.date}
-              />
-            </Link>
+              <Link href={`/blog/${'modern-brand-strategy'}`} className="block">
+                <Card
+                  key={i}
+                  image={post.image}
+                  name={post.title}
+                  description={post.excerpt}
+                  subdesc={post.date}
+                  variant="blog"
+                />
+              </Link>
+            </motion.div>
           ))}
         </div>
+        <SidebarBlog recentPosts={recentPosts} categories={categories} />
       </section>
     </>
   );

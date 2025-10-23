@@ -30,7 +30,6 @@ const PageTitle: React.FC<PageTitleProps> = ({
         backgroundImage: `url(${backgroundImage})`,
       }}
     >
-      {/* Overlay biar teks tetap jelas */}
       <div className="absolute inset-0 bg-black/60" />
 
       <div

@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import { blogPosts } from '@/data/posts';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
-import Card from '../ui/Card';
+import Card from '@/components/ui/Card';
 
 export default function LatestBlog() {
   const [cardsPerView, setCardsPerView] = useState(3);

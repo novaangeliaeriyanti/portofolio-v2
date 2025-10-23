@@ -9,7 +9,7 @@ const BlogList = () => {
 
   if (!post) notFound();
   return (
-    <article className="container mx-auto max-w-3xl py-16 px-6">
+    <article className="container mx-auto max-w-4xl pb-16 px-6">
       <header className="mb-10 text-center">
         <h1 className="text-4xl md:text-5xl font-bold mb-4">{post.title}</h1>
         <p className="text-muted-foreground text-sm">

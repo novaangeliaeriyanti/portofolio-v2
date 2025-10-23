@@ -3,7 +3,8 @@
 import { motion } from 'framer-motion';
 import Container from '@/components/ui/Container';
 import { Play } from 'lucide-react';
-export default function HeroCorporate() {
+import { hero } from '@/data/hero';
+export default function HeroStartup() {
   return (
     <section
       className="relative bg-cover bg-center bg-no-repeat bg-fixed py-24 h-1/2 md:h-screen md:py-32 -translate-y-[70px] text-foreground"
@@ -21,7 +22,7 @@ export default function HeroCorporate() {
           transition={{ duration: 0.6 }}
           className="text-5xl font-bold mb-4 text-white"
         >
-          We Build Digital Solutions that Drive Success
+          {hero.title}
         </motion.h1>
 
         <motion.p
@@ -30,8 +31,7 @@ export default function HeroCorporate() {
           transition={{ delay: 0.2 }}
           className="text-lg text-gray-200 mb-8"
         >
-          ModernCorp helps companies grow through strategic design and
-          technology, creating innovative solutions tailored to your business.
+          {hero.desc}
         </motion.p>
 
         <motion.div

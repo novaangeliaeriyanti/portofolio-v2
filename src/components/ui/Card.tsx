@@ -10,6 +10,7 @@ interface CardProps {
   stack?: string[];
   className?: string;
   subdesc?: string;
+  variant?: 'blog' | 'default';
 }
 
 export default function Card({
@@ -19,11 +20,12 @@ export default function Card({
   stack,
   className,
   subdesc,
+  variant = 'default',
 }: CardProps) {
   return (
     <div
       className={cn(
-        'group border border-foreground/10 rounded-xl overflow-hidden hover:shadow-lg transition bg-white',
+        'group border border-foreground/10 rounded-xl overflow-hidden hover:shadow-lg transition bg-white h-full',
         className
       )}
     >
@@ -36,7 +38,12 @@ export default function Card({
         />
       </div>
 
-      <div className="p-5 space-y-2 rounded-t-2xl bg-white -mt-4 relative z-10">
+      <div
+        className={cn(
+          'p-5 space-y-2  bg-white -mt-4 relative z-10',
+          variant === 'blog' ? '' : 'rounded-t-2xl'
+        )}
+      >
         <p className="text-xs text-muted-foreground mt-3">{subdesc}</p>
         <h3 className="font-semibold">{name}</h3>
         <p className="text-sm text-muted-foreground line-clamp-3">
@@ -53,6 +60,13 @@ export default function Card({
                 {tech}
               </span>
             ))}
+          </div>
+        )}
+        {variant === 'blog' && (
+          <div className="flex mt-3 justify-end cursor-pointer group">
+            <span className="px-3 py-1 text-xs font-semibold rounded-full bg-accent group-hover:bg-foreground text-background">
+              Read more
+            </span>
           </div>
         )}
       </div>
