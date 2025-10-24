@@ -1,36 +1,65 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🏢 ModernCorp – Company Profile Website
 
-## Getting Started
+**ModernCorp** is a modern, responsive **company profile website** built with **Next.js 15**, **TypeScript**, and **Tailwind CSS 4**.  
+It is designed to present businesses, agencies, or startups with a professional, clean, and animated user experience.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🖥️ Live Demo
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+🌐 **[https://portfolio-v2-iota-silk.vercel.app](https://portfolio-v2-iota-silk.vercel.app)**  
+*(Hosted on Vercel)*
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+![ModernCorp Preview](https://via.placeholder.com/1200x600?text=ModernCorp+Preview)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 🚀 Tech Stack
 
-To learn more about Next.js, take a look at the following resources:
+| Category | Technology |
+|-----------|-------------|
+| **Framework** | [Next.js 15](https://nextjs.org/) |
+| **Language** | [TypeScript](https://www.typescriptlang.org/) |
+| **Styling** | [Tailwind CSS 4](https://tailwindcss.com/) |
+| **Animation** | [Framer Motion](https://www.framer.com/motion/) |
+| **Icons** | [Lucide React](https://lucide.dev/) |
+| **UI Library** | [Radix UI](https://www.radix-ui.com/) |
+| **Theme Management** | [next-themes](https://github.com/pacocoursey/next-themes) |
+| **Code Quality** | ESLint + Prettier |
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🌟 Features
 
-## Deploy on Vercel
+- 🧭 Modular and reusable components  
+- 🌗 Dark / Light mode toggle  
+- 🎬 Smooth page and section transitions  
+- 📱 Fully responsive layout  
+- ⚡ Fast performance with Next.js 15 App Router  
+- 🧩 Two homepage variants: **Corporate** and **Startup**  
+- 🔍 SEO optimized & accessible  
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## ⚙️ Next.js Configuration
+
+Optimized for remote image loading (e.g., Unsplash):
+
+```ts
+import type { NextConfig } from 'next';
+
+const nextConfig: NextConfig = {
+  reactStrictMode: true,
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+        port: '',
+        pathname: '/**',
+      },
+    ],
+  },
+};
+
+export default nextConfig;
