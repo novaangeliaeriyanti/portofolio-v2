@@ -8,7 +8,7 @@ It is designed to present businesses, agencies, or startups with a professional,
 ## 🖥️ Live Demo
 
 🌐 **[https://portfolio-v2-iota-silk.vercel.app](https://portfolio-v2-iota-silk.vercel.app)**  
-*(Hosted on Vercel)*
+_(Hosted on Vercel)_
 
 ![ModernCorp Preview](https://via.placeholder.com/1200x600?text=ModernCorp+Preview)
 
@@ -16,28 +16,28 @@ It is designed to present businesses, agencies, or startups with a professional,
 
 ## 🚀 Tech Stack
 
-| Category | Technology |
-|-----------|-------------|
-| **Framework** | [Next.js 15](https://nextjs.org/) |
-| **Language** | [TypeScript](https://www.typescriptlang.org/) |
-| **Styling** | [Tailwind CSS 4](https://tailwindcss.com/) |
-| **Animation** | [Framer Motion](https://www.framer.com/motion/) |
-| **Icons** | [Lucide React](https://lucide.dev/) |
-| **UI Library** | [Radix UI](https://www.radix-ui.com/) |
+| Category             | Technology                                                |
+| -------------------- | --------------------------------------------------------- |
+| **Framework**        | [Next.js 15](https://nextjs.org/)                         |
+| **Language**         | [TypeScript](https://www.typescriptlang.org/)             |
+| **Styling**          | [Tailwind CSS 4](https://tailwindcss.com/)                |
+| **Animation**        | [Framer Motion](https://www.framer.com/motion/)           |
+| **Icons**            | [Lucide React](https://lucide.dev/)                       |
+| **UI Library**       | [Radix UI](https://www.radix-ui.com/)                     |
 | **Theme Management** | [next-themes](https://github.com/pacocoursey/next-themes) |
-| **Code Quality** | ESLint + Prettier |
+| **Code Quality**     | ESLint + Prettier                                         |
 
 ---
 
 ## 🌟 Features
 
-- 🧭 Modular and reusable components  
-- 🌗 Dark / Light mode toggle  
-- 🎬 Smooth page and section transitions  
-- 📱 Fully responsive layout  
-- ⚡ Fast performance with Next.js 15 App Router  
-- 🧩 Two homepage variants: **Corporate** and **Startup**  
-- 🔍 SEO optimized & accessible  
+- 🧭 Modular and reusable components
+- 🌗 Dark / Light mode toggle
+- 🎬 Smooth page and section transitions
+- 📱 Fully responsive layout
+- ⚡ Fast performance with Next.js 15 App Router
+- 🧩 Two homepage variants: **Corporate** and **Startup**
+- 🔍 SEO optimized & accessible
 
 ---
 
@@ -63,3 +63,4 @@ const nextConfig: NextConfig = {
 };
 
 export default nextConfig;
+```

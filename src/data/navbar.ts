@@ -9,11 +9,11 @@ export const navLinks = [
   {
     name: 'All Pages',
     children: [
-      { name: 'About', href: '/about' },
-      { name: 'Services', href: '/services' },
-      { name: 'Blog', href: '/blog' },
-      { name: 'Blog Details', href: '/blog/modern-brand-strategy' },
-      { name: 'Contact', href: '/contact' },
+      // { name: 'About', href: '/about' },
+      // { name: 'Services', href: '/services' },
+      // { name: 'Blog', href: '/blog' },
+      // { name: 'Blog Details', href: '/blog/modern-brand-strategy' },
+      // { name: 'Contact', href: '/contact' },
       { name: '404', href: '/not-found' },
     ],
   },

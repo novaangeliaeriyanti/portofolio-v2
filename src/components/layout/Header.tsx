@@ -8,6 +8,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import Logo from '../ui/Logo';
 import { navLinks } from '@/data/navbar';
 import ThemeToggle from '../ui/ThemeToggle';
+import Container from '../ui/Container';
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -118,8 +119,8 @@ export default function Header() {
 
   return (
     <>
-      <header className="sticky top-0 z-50 bg-background/80 backdrop-blur border-b border-foreground/10">
-        <div className="container mx-auto px-6 py-4 flex justify-between items-center">
+      <header className="sticky top-0 z-50 bg-background/80 backdrop-blur">
+        <Container className="mx-auto px-6 py-4 flex justify-between items-center">
           <Logo />
           <nav
             ref={dropdownRef}
@@ -192,7 +193,7 @@ export default function Header() {
           >
             <Menu size={22} />
           </button>
-        </div>
+        </Container>
       </header>
 
       {typeof window !== 'undefined' && createPortal(drawer, document.body)}

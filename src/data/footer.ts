@@ -3,26 +3,41 @@ export interface FooterLink {
   href: string;
 }
 
-export interface FooterSection {
-  heading: string;
-  links: FooterLink[];
-}
-
-export const footerSections: FooterSection[] = [
+export const footerSections = [
   {
-    heading: 'Company',
+    heading: 'Head Office',
+    content: [
+      'Road, California, US',
+      'Mon – Fri: 08:00 – 17:00',
+      'info@ladybug.com',
+      '+1 000 123 XXX XXX',
+    ],
+  },
+  {
+    heading: 'Quick Links',
     links: [
       { title: 'About Us', href: '/about' },
+      { title: 'Our Services', href: '/services' },
+      { title: 'Projects', href: '/projects' },
       { title: 'Contact', href: '/contact' },
-      { title: 'Blog', href: '/blog' },
+    ],
+  },
+  {
+    heading: 'Our Services',
+    links: [
+      { title: 'Industrial Maintenance', href: '/services/maintenance' },
+      { title: 'Construction Management', href: '/services/construction' },
+      { title: 'Energy Solutions', href: '/services/energy' },
+      { title: 'Fabrication & Welding', href: '/services/fabrication' },
     ],
   },
   {
     heading: 'Follow Us',
-    links: [
-      { title: 'Instagram', href: '' },
-      { title: 'LinkedIn', href: '' },
-      { title: 'Twitter (X)', href: '' },
+    socials: [
+      { name: 'Facebook', href: 'https://facebook.com', icon: 'facebook' },
+      { name: 'Twitter', href: 'https://twitter.com', icon: 'twitter' },
+      { name: 'LinkedIn', href: 'https://linkedin.com', icon: 'linkedin' },
+      { name: 'Instagram', href: 'https://instagram.com', icon: 'instagram' },
     ],
   },
 ];

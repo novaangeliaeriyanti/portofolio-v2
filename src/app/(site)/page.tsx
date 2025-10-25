@@ -1,4 +1,4 @@
-import CorporateHomePage from './home/corporate/page';
+import CorporateHomePage from './home/company/page';
 
 export default function HomePage() {
   return <CorporateHomePage />;
