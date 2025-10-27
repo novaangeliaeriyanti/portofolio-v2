@@ -24,3 +24,26 @@ export const slides = [
       'https://images.pexels.com/photos/2760241/pexels-photo-2760241.jpeg',
   },
 ];
+
+export const videos = [
+  {
+    thumbnail:
+      'https://images.pexels.com/photos/459728/pexels-photo-459728.jpeg',
+    videoUrl: 'https://www.pexels.com/download/video/4293956/',
+  },
+  {
+    thumbnail:
+      'https://images.pexels.com/photos/459728/pexels-photo-459728.jpeg',
+    videoUrl: 'https://www.pexels.com/download/video/4293956/',
+  },
+  {
+    thumbnail:
+      'https://images.pexels.com/photos/459728/pexels-photo-459728.jpeg',
+    videoUrl: 'https://www.pexels.com/download/video/4293956/',
+  },
+  {
+    thumbnail:
+      'https://images.pexels.com/photos/459728/pexels-photo-459728.jpeg',
+    videoUrl: 'https://www.pexels.com/download/video/4293956/',
+  },
+];

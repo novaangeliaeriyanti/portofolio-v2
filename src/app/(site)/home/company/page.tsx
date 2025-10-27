@@ -8,7 +8,7 @@ import Solutions from '@/components/sections/home1/Solutions';
 import Teams from '@/components/sections/home1/Teams';
 import { slides } from '@/data/hero';
 
-export default function CorporateHomePage() {
+export default function CompanyHomePage() {
   return (
     <>
       <HeroBanner slides={slides} autoPlayMs={5000} />
