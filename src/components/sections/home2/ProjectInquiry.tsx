@@ -73,23 +73,23 @@ export default function ProjectInquiry() {
           </form>
         </div>
 
-        <div className="relative flex flex-col gap-4">
-          <div className="pl-10 flex justify-end">
+        <div className="relative grid grid-rows-2 gap-4">
+          <div className="pl-5">
             <Image
               src={data.images[0]}
               alt="Project visual 1"
               width={400}
               height={300}
-              className="object-cover w-[400px] h-full rounded-2xl shadow-md"
+              className="object-cover w-full h-[200px] rounded-2xl shadow-md"
             />
           </div>
-          <div className="absolute pr-5 bottom-0 translate-y-1/2">
+          <div className="pr-5">
             <Image
               src={data.images[1]}
               alt="Project visual 2"
               width={400}
               height={300}
-              className="object-cover w-[300px] h-[200px] rounded-2xl shadow-md border-8 border-background"
+              className="object-cover w-full h-[200px] rounded-2xl shadow-md"
             />
           </div>
         </div>

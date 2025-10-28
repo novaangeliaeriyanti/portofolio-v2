@@ -71,7 +71,10 @@ export default function HeroBanner({
   return (
     <Container className="mx-auto relative z-10">
       <section
-        className="relative w-full h-[50vh] lg:h-[60vh] rounded-2xl overflow-hidden"
+        className="relative w-full h-[50vh] lg:h-[80vh] rounded-2xl overflow-hidden flex justify-end p-4"
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+        onKeyDown={handleKeyDown}
         tabIndex={0}
         ref={(el) => {
           containerRef.current = el;
@@ -79,13 +82,23 @@ export default function HeroBanner({
         aria-roledescription="carousel"
         aria-label="Hero banner carousel"
       >
+        <div className="absolute inset-0">
+          {slides.map((slide, idx) => (
+            <div
+              key={idx}
+              className={`absolute inset-0 bg-cover bg-center saturate-[1.05] contrast-[1.05] transition-opacity duration-400 ease-linear ${idx === activeIndex ? 'opacity-100' : 'opacity-0'}`}
+              style={{ backgroundImage: `url(${slide.backgroundImageUrl})` }}
+              aria-hidden={idx !== activeIndex}
+            />
+          ))}
+        </div>
         <div
-          className="relative z-10 h-full flex flex-col items-center justify-center text-white text-center px-12 py-10"
+          className="relative bg-foreground/50 rounded-2xl w-1/2 z-10 h-full flex flex-col items-center justify-center text-background text-center px-12 py-10 drop-shadow-[0_2px_8px_rgba(0,0,0,0.35)]"
           role="group"
           aria-label={`Slide ${activeIndex + 1} of ${slides.length}`}
         >
           {activeSlide?.badgeText && (
-            <span className="inline-flex items-center gap-2 px-3 py-1 text-gray-100 text-[12px] tracking-[0.08em] uppercase">
+            <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-background/20 text-background text-[12px] tracking-[0.08em] uppercase border border-white/30 backdrop-blur-[6px]">
               {activeSlide.badgeText}
             </span>
           )}
@@ -117,6 +130,25 @@ export default function HeroBanner({
             </button>
           )}
         </div>
+
+        <div
+          className="absolute left-0 top-1/2 z-20 flex flex-col gap-[10px] p-4 bg-background rounded-r-xl"
+          role="tablist"
+          aria-label="Slide navigation"
+        >
+          {slides.map((_, idx) => (
+            <button
+              key={idx}
+              className={`w-[10px] h-[10px] rounded-full bg-foreground border border-white/90 transition hover:scale-[1.1] ${idx === activeIndex ? 'bg-primary shadow-[0_0_0_4px_rgba(255,255,255,0.15)]' : ''}`}
+              aria-label={`Go to slide ${idx + 1}`}
+              aria-selected={idx === activeIndex}
+              role="tab"
+              onClick={() => goTo(idx)}
+            />
+          ))}
+        </div>
+
+        <div className="pointer-events-none absolute inset-0 rounded-2xl shadow-[inset_0_0_0_1px_rgba(255,255,255,0.08)]" />
       </section>
     </Container>
   );
