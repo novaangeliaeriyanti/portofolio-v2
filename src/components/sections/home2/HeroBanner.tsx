@@ -93,7 +93,7 @@ export default function HeroBanner({
           ))}
         </div>
         <div
-          className="relative bg-foreground/50 rounded-2xl w-1/2 z-10 h-full flex flex-col items-center justify-center text-background text-center px-12 py-10 drop-shadow-[0_2px_8px_rgba(0,0,0,0.35)]"
+          className="relative bg-foreground/20 backdrop-blur-xs rounded-2xl w-full md:w-1/2 z-10 h-full flex flex-col items-center justify-center text-background text-center px-12 py-10 drop-shadow-[0_2px_8px_rgba(0,0,0,0.35)]"
           role="group"
           aria-label={`Slide ${activeIndex + 1} of ${slides.length}`}
         >
@@ -132,7 +132,7 @@ export default function HeroBanner({
         </div>
 
         <div
-          className="absolute left-0 top-1/2 z-20 flex flex-col gap-[10px] p-4 bg-background rounded-r-xl"
+          className="absolute left-0 top-1/2 z-20 flex flex-col gap-[10px] p-4 bg-background rounded-r-xl "
           role="tablist"
           aria-label="Slide navigation"
         >

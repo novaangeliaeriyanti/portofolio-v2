@@ -1,12 +1,12 @@
 'use client';
-
-import { useRef } from 'react';
-import Image from 'next/image';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import Services from '@/components/sections/shared/Services';
 import Container from '@/components/ui/Container';
 import { industrialCards } from '@/data/solutions';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
+import Image from 'next/image';
+import { useRef } from 'react';
 
-export default function Solutions() {
+export default function ServicesPage() {
   const scrollRef = useRef<HTMLDivElement>(null);
 
   const scroll = (direction: 'left' | 'right') => {
@@ -19,13 +19,13 @@ export default function Solutions() {
       scrollRef.current.scrollTo({ left: newScroll, behavior: 'smooth' });
     }
   };
-
   return (
-    <Container className="py-16 space-y-8">
-      <div className="mx-auto bg-foreground rounded-2xl p-5 md:p-8 lg:p-12">
+    <Container className="py-4">
+      <Services />
+      <div className="mx-auto rounded-2xl p-5 md:p-8 lg:p-12">
         <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between mb-10">
           <div className="max-w-lg">
-            <h2 className="text-3xl text-background font-bold leading-snug">
+            <h2 className="text-3xl text-foreground font-bold leading-snug">
               Providing <span className="text-orange-500">Smart Solutions</span>{' '}
               <br />
               of Every Kind
@@ -59,7 +59,7 @@ export default function Solutions() {
           {industrialCards.map((card, i) => (
             <div
               key={i}
-              className="min-w-[300px] max-w-[320px] bg-background border-2 border-background rounded-2xl overflow-hidden shadow-lg snap-start flex-shrink-0 group transition-transform duration-300"
+              className="min-w-[300px] max-w-[320px] bg-foreground border-2 border-foreground rounded-2xl overflow-hidden shadow-lg snap-start flex-shrink-0 group transition-transform duration-300"
             >
               <div className="relative h-44 w-full overflow-hidden">
                 <Image
@@ -72,7 +72,7 @@ export default function Solutions() {
               </div>
 
               <div className="p-5">
-                <h3 className="text-body font-semibold mb-2 text-foreground">
+                <h3 className="text-body font-semibold mb-2 text-background">
                   {card.title}
                 </h3>
                 <p className="text-small">{card.desc}</p>

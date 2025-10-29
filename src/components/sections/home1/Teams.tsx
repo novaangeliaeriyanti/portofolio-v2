@@ -4,7 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowRight, Facebook, Linkedin, Twitter } from 'lucide-react';
 import Container from '@/components/ui/Container';
-import { leadershipTeam as data } from '@/data/teams';
+import { leadershipTeam as data } from '@/data/about';
 
 export default function Teams() {
   return (
@@ -31,7 +31,7 @@ export default function Teams() {
         <div className=" grid md:grid-cols-3 gap-8">
           {data.members.map((member, i) => (
             <div key={i} className="relative group transition">
-              <div className="relative w-full h-[500px] rounded-2xl overflow-hidden">
+              <div className="relative w-full h-[600px] rounded-2xl overflow-hidden">
                 <Image
                   src={member.image}
                   alt={member.name}
@@ -41,7 +41,7 @@ export default function Teams() {
               </div>
 
               <div
-                className="absolute bottom-0 translate-y-1/2 left-1/3 z-10
+                className="absolute bottom-0 translate-y-1/3 md:translate-y-1/2 left-1/3 z-10
                 bg-primary text-white rounded-2xl p-4 w-48 space-y-1
                   shadow-[0_8px_30px_rgba(255,145,0,0.55)]"
               >

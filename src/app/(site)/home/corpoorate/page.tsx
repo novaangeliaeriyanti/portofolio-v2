@@ -2,7 +2,7 @@
 
 import HeroBanner from '@/components/sections/home2/HeroBanner';
 import NewsList from '@/components/sections/home2/NewsList';
-import ProjectInquiry from '@/components/sections/home2/ProjectInquiry';
+import ProjectInquiry from '@/components/sections/shared/ProjectInquiry';
 import Services from '@/components/sections/home2/Services';
 import Solutions from '@/components/sections/home2/Solutions';
 import Teams from '@/components/sections/home2/Teams';

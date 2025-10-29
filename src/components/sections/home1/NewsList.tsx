@@ -21,10 +21,10 @@ export default function NewsList() {
           </a>
         </div>
         <div className="grid md:grid-cols-3 gap-8">
-          {articles.map((article, i) => (
+          {articles.slice(0, 3).map((article, i) => (
             <div
               key={i}
-              className="bg-foreground border-4 border-foreground rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300"
+              className="bg-foreground border-2 border-foreground rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300"
             >
               <div className="relative h-52 lg:h-72 w-full">
                 <Image

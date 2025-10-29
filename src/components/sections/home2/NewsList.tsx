@@ -10,7 +10,7 @@ export default function NewsList() {
   return (
     <Container className="py-16 space-y-8">
       <div className=" mx-auto">
-        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-10">
+        <div className="flex flex-col justify-center items-center mb-10">
           <h2 className="text-3xl font-bold">Recent news and events</h2>
           <a
             href="#"
@@ -20,11 +20,50 @@ export default function NewsList() {
             <ArrowRight className="w-4 h-4" />
           </a>
         </div>
+        <div className="flex flex-col justify-center md:flex-row md:justify-between gap-10 mb-8">
+          {articles[0] && (
+            <div className="flex-2 rounded-2xl overflow-hidden relative min-h-[250px]">
+              <div className="relative h-64 md:h-full w-full">
+                {articles[0]?.image && (
+                  <Image
+                    src={articles[0].image}
+                    alt={articles[0].title || 'Headline image'}
+                    fill
+                    className="object-cover"
+                  />
+                )}
+                <span className="absolute top-4 left-4 bg-primary text-white text-xs font-semibold px-3 py-1 rounded-md">
+                  HEADLINE
+                </span>
+              </div>
+
+              <div className="absolute bottom-4 left-4 right-4 w-fit bg-black/50 backdrop-blur-md p-4 rounded-lg text-white">
+                <p className="text-tiny mb-2">{articles[0].date}</p>
+                <h2 className="font-bold text-xl line-clamp-2">
+                  {articles[0].title}
+                </h2>
+              </div>
+            </div>
+          )}
+
+          <div className="flex-1 space-y-6">
+            <h3 className="text-xl font-bold">Popular</h3>
+            {articles.map((a, i) => (
+              <div key={i} className="flex gap-4 items-start">
+                <span className="text-2xl font-bold text-primary">{i + 1}</span>
+                <p className="text-sm font-medium leading-tight line-clamp-2">
+                  {a.title}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+
         <div className="grid md:grid-cols-3 gap-8">
-          {articles.map((article, i) => (
+          {articles.slice(1, 4).map((article, i) => (
             <div
               key={i}
-              className="bg-foreground border-4 border-foreground rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300"
+              className="border-2 border-foreground rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300"
             >
               <div className="relative h-52 lg:h-72 w-full">
                 <Image
@@ -33,17 +72,17 @@ export default function NewsList() {
                   fill
                   className="object-cover"
                 />
-                <div className="absolute top-3 left-3 bg-primary text-tiny text-foreground font-semibold px-3 py-1 rounded-md">
+                <div className="absolute top-3 left-3 bg-primary text-tiny text-white font-semibold px-3 py-1 rounded-md">
                   {article.category}
                 </div>
               </div>
 
               <div className="p-6 flex flex-col h-full">
                 <p className="text-tiny mb-1">{article.date}</p>
-                <h3 className="text-lg font-semibold text-background mb-2 leading-snug">
+                <h3 className="block text-xl font-semibold mb-2 text-foreground border-t pt-2 border-foreground line-clamp-2">
                   {article.title}
                 </h3>
-                <p className="text-small line-clamp-5">{article.desc}</p>
+                <p className="text-small line-clamp-3">{article.desc}</p>
 
                 <Button className="mt-5 inline-flex items-center gap-2 w-fit">
                   Read More

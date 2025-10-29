@@ -50,8 +50,8 @@ export default function NotFound() {
         </Link>
       </motion.div>
 
-      <div className="absolute w-64 h-64 bg-primary/10 rounded-full blur-3xl top-10 left-10 animate-pulse" />
-      <div className="absolute w-72 h-72 bg-primary/5 rounded-full blur-3xl bottom-0 right-0 animate-pulse" />
+      <div className="absolute w-72 h-72 bg-primary/10 rounded-full blur-3xl bottom-1/2 left-1/2 animate-pulse" />
+      <div className="absolute w-96 h-96 bg-primary/5 rounded-full blur-3xl bottom-1/2 left-1/2 animate-pulse" />
     </div>
   );
 }

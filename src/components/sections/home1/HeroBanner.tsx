@@ -71,7 +71,7 @@ export default function HeroBanner({
   return (
     <Container className="mx-auto relative z-10">
       <section
-        className="relative w-full h-[50vh] lg:h-[60vh] rounded-2xl overflow-hidden"
+        className="relative w-full h-[50vh] lg:h-[80vh] rounded-2xl overflow-hidden"
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
         onKeyDown={handleKeyDown}

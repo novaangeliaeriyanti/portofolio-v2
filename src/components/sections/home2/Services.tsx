@@ -30,107 +30,86 @@ export default function Services() {
         </div>
         <div className="flex-1 text-small leading-relaxed">{data.intro}</div>
       </div>
-      <div className="grid grid-cols-3 gap-6 items-center">
-        <div className="col-span-2">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
+        <div className="md:col-span-2">
           <Image
             src={data.cards[1].image}
             alt="installation service main"
             width={600}
             height={800}
-            className="object-cover object-center w-full h-[300px] rounded-2xl shadow-md"
+            className="object-cover object-center w-full h-[250px] md:h-[300px] rounded-2xl shadow-md"
           />
         </div>
 
-        <div className="flex justify-between gap-6 h-full">
+        <div className="flex flex-col md:flex-row justify-between gap-4 md:gap-6 h-full">
           {data.cards[0].stats.map((stat, idx) => (
             <div
               key={idx}
-              className=" flex items-center justify-center flex-col
-              bg-primary text-white rounded-2xl px-6 py-8 space-y-4  w-full h-full
-              shadow-[0_8px_30px_rgba(255,145,0,0.55)]"
+              className="flex flex-col items-center justify-center text-center
+        bg-primary text-white rounded-2xl px-6 py-6 md:py-8 w-full h-full
+        shadow-[0_8px_30px_rgba(255,145,0,0.55)]"
             >
-              <div className="text-3xl font-bold">{stat.value}</div>
-              <div className="text-sm font-medium">{stat.label}</div>
+              <div className="text-2xl md:text-3xl font-bold">{stat.value}</div>
+              <div className="text-xs md:text-sm font-medium">{stat.label}</div>
             </div>
           ))}
         </div>
       </div>
-      <div className="grid sm:grid-cols-2 gap-4">
-        {/* <div className="relative">
-          <div className="grid grid-cols-2 gap-4">
-            <div className="row-span-2 py-5">
-              <Image
-                src={data.cards[0].image}
-                alt="installation service main"
-                width={600}
-                height={800}
-                className="object-cover w-full h-[400px] rounded-2xl shadow-md"
-              />
-            </div>
-            <div className="pr-5">
-              <Image
-                src={data.cards[1].image}
-                alt="installation service secondary"
-                width={400}
-                height={300}
-                className="object-cover w-full h-[200px] rounded-2xl shadow-md"
-              />
-            </div>
-            <div className="pl-5">
-              <Image
-                src={data.cards[2].image}
-                alt="installation service secondary"
-                width={400}
-                height={300}
-                className="object-cover w-full h-[200px] rounded-2xl shadow-md"
-              />
-            </div>
-          </div>
-          <div
-            className="absolute top-1/2 -translate-y-1/2 left-1/3
-             bg-primary text-white rounded-2xl px-6 py-8 w-48 space-y-4
-             shadow-[0_8px_30px_rgba(255,145,0,0.55)]"
-          >
-            {data.cards[0].stats.map((stat, idx) => (
-              <div key={idx}>
-                <div className="text-3xl font-bold">{stat.value}</div>
-                <div className="text-sm font-medium">{stat.label}</div>
-              </div>
-            ))}
-          </div>
-        </div> */}
 
-        <div className="space-y-8">
-          <div className="space-y-6">
-            {data.features.map((feature, i) => (
-              <div key={i} className="flex items-start gap-4">
-                <div className="p-3 bg-foreground/10 rounded-xl">
-                  {iconMap[feature.icon]}
-                </div>
-                <div>
-                  <h4 className="font-semibold text-foreground">
-                    {feature.title}
-                  </h4>
-                  <p className="text-small">{feature.desc}</p>
-                </div>
-              </div>
-            ))}
-          </div>
+      <div className="grid grid-cols-1 md:grid-cols-[1fr_1.5fr_1fr] py-6 items-center gap-6 md:gap-0">
+        <div className="-mt-6 -mb-6 overflow-hidden">
+          <Image
+            src={data.cards[0].image}
+            alt="left image"
+            width={400}
+            height={500}
+            className="w-full h-[320px] object-cover object-center rounded-t-2xl md:rounded-l-2xl shadow-lg"
+          />
+        </div>
 
-          <div className="pt-6 space-x-4 flex items-center">
-            <Button className="bg-primary text-black hover:bg-primary/50">
-              {data.ctaPrimary.label}
-            </Button>
-            <p className="text-small">
-              Or call us at{' '}
-              <a
-                href={data.contactPhone.href}
-                className="font-semibold text-primary hover:underline"
-              >
-                {data.contactPhone.label}
-              </a>
-            </p>
+        <div className="bg-foreground/5 px-10 py-8 rounded-2xl flex flex-col justify-center text-foreground leading-relaxed shadow-md z-10">
+          <div className="space-y-8">
+            <div className="space-y-6">
+              {data.features.map((feature, i) => (
+                <div key={i} className="flex items-start gap-4">
+                  <div className="p-3 bg-foreground/10 rounded-xl">
+                    {iconMap[feature.icon]}
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-foreground">
+                      {feature.title}
+                    </h4>
+                    <p className="text-small">{feature.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="pt-6 space-x-4 flex items-center">
+              <Button className="bg-primary text-black hover:bg-primary/50">
+                {data.ctaPrimary.label}
+              </Button>
+              <p className="text-small">
+                Or call us at{' '}
+                <a
+                  href={data.contactPhone.href}
+                  className="font-semibold text-primary hover:underline"
+                >
+                  {data.contactPhone.label}
+                </a>
+              </p>
+            </div>
           </div>
+        </div>
+
+        <div className="-mt-6 -mb-6 overflow-hidden">
+          <Image
+            src={data.cards[2].image}
+            alt="right image"
+            width={400}
+            height={500}
+            className="w-full h-[320px] object-cover object-center rounded-b-2xl md:rounded-r-2xl shadow-lg"
+          />
         </div>
       </div>
     </Container>

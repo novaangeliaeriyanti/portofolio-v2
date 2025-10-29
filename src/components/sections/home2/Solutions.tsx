@@ -22,7 +22,7 @@ export default function Solutions() {
 
   return (
     <Container className="py-16 space-y-8">
-      <div className="mx-auto  rounded-2xl">
+      <div className="mx-auto rounded-2xl">
         <div className="flex justify-center items-center text-center mb-10">
           <div className="">
             <h2 className="text-3xl text-foreground font-bold leading-snug">
@@ -57,9 +57,15 @@ export default function Solutions() {
           {industrialCards.map((card, i) => (
             <div
               key={i}
-              className="min-w-[300px] max-w-[320px] bg-foreground border-4 border-foreground rounded-2xl overflow-hidden shadow-lg snap-start flex-shrink-0 group transition-transform duration-300"
+              className="min-w-[300px] max-w-[320px] p-2 border-2 border-foreground rounded-2xl overflow-hidden shadow-lg snap-start flex-shrink-0 group transition-transform duration-300"
             >
-              <div className="relative h-44 w-full overflow-hidden">
+              <div className="p-5">
+                <h3 className="inline-block text-body font-semibold mb-2 text-foreground border-b border-foreground">
+                  {card.title}
+                </h3>
+                <p className="text-small">{card.desc}</p>
+              </div>
+              <div className="relative h-44 w-full overflow-hidden rounded-3xl mb-1">
                 <Image
                   src={card.image}
                   alt={card.title}
@@ -68,14 +74,6 @@ export default function Solutions() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
               </div>
-
-              <div className="p-5">
-                <h3 className="text-body font-semibold mb-2 text-background">
-                  {card.title}
-                </h3>
-                <p className="text-small">{card.desc}</p>
-              </div>
-
               <div className="absolute top-4 right-4 bg-primary00 w-3 h-3 rounded-full shadow-[0_0_10px_rgba(249,115,22,0.8)]" />
             </div>
           ))}

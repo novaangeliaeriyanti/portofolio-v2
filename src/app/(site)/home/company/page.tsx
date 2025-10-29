@@ -2,10 +2,10 @@
 
 import HeroBanner from '@/components/sections/home1/HeroBanner';
 import NewsList from '@/components/sections/home1/NewsList';
-import ProjectInquiry from '@/components/sections/home1/ProjectInquiry';
-import Services from '@/components/sections/home1/Services';
+import Services from '@/components/sections/shared/Services';
 import Solutions from '@/components/sections/home1/Solutions';
 import Teams from '@/components/sections/home1/Teams';
+import ProjectInquiry from '@/components/sections/shared/ProjectInquiry';
 import { slides } from '@/data/hero';
 
 export default function CompanyHomePage() {
