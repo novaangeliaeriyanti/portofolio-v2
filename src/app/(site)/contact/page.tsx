@@ -8,6 +8,8 @@ import { projectInquiryData as data } from '@/data/contact';
 import { FormData } from '@/types/types';
 import { installationServicesData } from '@/data/services';
 import { Button } from '@/components/ui/Button';
+import { motion } from 'framer-motion';
+import { fadeIn, fadeInUp } from '@/lib/motion';
 
 export default function ContactPage() {
   const [formData, setFormData] = useState<FormData>({
@@ -29,10 +31,13 @@ export default function ContactPage() {
   };
 
   return (
-    <Container className="py-20">
-      <div className="grid lg:grid-cols-2 gap-4">
-        <div className="bg-primary/20 rounded-tr-4xl shadow-sm p-10 border-2 border-foreground">
-          <div className="mb-6 space-y-1">
+    <Container className="py-20 min-h-[400px]">
+      <div className="grid lg:grid-cols-2 gap-8 items-stretch">
+        <motion.div
+          {...fadeInUp}
+          className="bg-primary/20 rounded-tr-4xl shadow-sm p-10 border-2 border-foreground"
+        >
+          <motion.div {...fadeIn} className="mb-6 space-y-1">
             <h2 className="text-3xl font-bold tracking-tight">Get in touch</h2>
             <p className="text-sm">
               You can reach us anytime via{' '}
@@ -43,9 +48,13 @@ export default function ContactPage() {
                 hello@untitledui.com
               </a>
             </p>
-          </div>
+          </motion.div>
 
-          <form onSubmit={handleSubmit} className="space-y-4">
+          <motion.form
+            {...fadeInUp}
+            onSubmit={handleSubmit}
+            className="space-y-4"
+          >
             {data.formFields.map((field, i) =>
               field.type === 'textarea' ? (
                 <textarea
@@ -53,7 +62,7 @@ export default function ContactPage() {
                   name={field.name}
                   placeholder={field.placeholder}
                   rows={4}
-                  value={field.name as keyof FormData}
+                  value={formData[field.name as keyof FormData]}
                   onChange={handleChange}
                   className="w-full px-4 py-3 bg-background rounded-lg border border-zinc-200 focus:border-orange-500 focus:ring-2 focus:ring-orange-500/30 outline-none transition resize-none"
                 />
@@ -63,7 +72,7 @@ export default function ContactPage() {
                   type={field.type}
                   name={field.name}
                   placeholder={field.placeholder}
-                  value={field.name as keyof FormData}
+                  value={formData[field.name as keyof FormData]}
                   onChange={handleChange}
                   required
                   className="w-full px-4 py-3 bg-background rounded-lg border border-zinc-200 focus:border-orange-500 focus:ring-2 focus:ring-orange-500/30 outline-none transition"
@@ -78,10 +87,13 @@ export default function ContactPage() {
               {data.button.label}
               <Send className="w-4 h-4" />
             </button>
-          </form>
-        </div>
-        <div className="flex flex-col gap-4">
-          <div className="">
+          </motion.form>
+        </motion.div>
+        <motion.div
+          {...fadeIn}
+          className="flex flex-col gap-4 relative overflow-hidden"
+        >
+          <motion.div {...fadeInUp}>
             <Image
               src={data.images[1]}
               alt="Project visual 2"
@@ -89,8 +101,9 @@ export default function ContactPage() {
               height={300}
               className="object-cover w-full h-[200px] rounded-l-4xl shadow-md"
             />
-          </div>
-          <div className="relative">
+          </motion.div>
+
+          <motion.div {...fadeInUp} className="relative">
             <Image
               src={data.images[0]}
               alt="Main project image"
@@ -99,8 +112,11 @@ export default function ContactPage() {
               className="rounded-bl-4xl object-cover w-full h-[480px] md:h-full"
             />
 
-            <div className="absolute bottom-6 left-6 right-6 bg-white/5 backdrop-blur-xl p-6 rounded-bl-4xl shadow-md">
-              <div className=" space-x-4 flex items-center justify-center">
+            <motion.div
+              {...fadeIn}
+              className="absolute bottom-6 left-6 right-6 bg-white/5 backdrop-blur-xl p-6 rounded-bl-4xl shadow-md"
+            >
+              <div className="space-x-4 flex items-center justify-center">
                 <Button className="bg-primary text-black hover:bg-primary/50">
                   {installationServicesData.ctaPrimary.label}
                 </Button>
@@ -114,9 +130,9 @@ export default function ContactPage() {
                   </a>
                 </p>
               </div>
-            </div>
-          </div>
-        </div>
+            </motion.div>
+          </motion.div>
+        </motion.div>
       </div>
     </Container>
   );

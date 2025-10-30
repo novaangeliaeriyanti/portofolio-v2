@@ -13,7 +13,7 @@ export default function SidebarBlog({
   recentPosts,
 }: SidebarBlogProps) {
   return (
-    <aside className="space-y-6 lg:border-l lg:pl-8">
+    <aside className="space-y-6 h-full lg:border-l lg:pl-8">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}

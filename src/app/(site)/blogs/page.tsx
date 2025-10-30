@@ -1,22 +1,34 @@
+'use client';
+
 import SidebarBlog from '@/components/sections/shared/SidebarBlog';
 import { Button } from '@/components/ui/Button';
 import Container from '@/components/ui/Container';
 import { articles, categories } from '@/data/news';
 import { ArrowRight } from 'lucide-react';
 import Image from 'next/image';
+import { motion } from 'framer-motion';
+import { fadeIn } from '@/lib/motion';
+import { useRouter } from 'next/navigation';
 
 export default function Blogs() {
+  const router = useRouter()
+  if (!articles || articles?.length === 0) return null;
   return (
     <Container className="py-20">
-      <div className="grid lg:grid-cols-5 gap-10">
-        <div className="lg:col-span-3 space-y-10">
-          <div className="flex justify-between items-center">
+      <motion.div {...fadeIn} initial={false} className="grid lg:grid-cols-5 gap-10">
+        <motion.div {...fadeIn} initial={false} className="lg:col-span-3 space-y-10">
+          <motion.div {...fadeIn} initial={false} className="flex justify-between items-center">
             <h2 className="text-3xl font-bold">Recent news and events</h2>
-          </div>
+          </motion.div>
 
           {articles[0] && (
-            <div className="rounded-2xl overflow-hidden relative">
-              <div className="relative h-96 w-full">
+            <motion.div
+              {...fadeIn}
+              initial={false}
+              key={`headline-${articles[0].id}`}
+              className="rounded-2xl overflow-hidden relative"
+            >
+              <div key={`headline-${articles[0].id}`} className="relative h-96 w-full">
                 <Image
                   src={articles[0].image}
                   alt={articles[0].title}
@@ -34,14 +46,16 @@ export default function Blogs() {
                   {articles[0].title}
                 </h2>
               </div>
-            </div>
+            </motion.div>
           )}
 
-          <div className="grid md:grid-cols-3 gap-6">
+          <motion.div {...fadeIn} initial={false} className="grid md:grid-cols-3 gap-6">
             {articles.slice(1).map((article, i) => (
-              <div
-                key={i}
-                className="overflow-hidden shadow hover:shadow-lg transition border-2 border-foreground rounded-2xl "
+              <motion.div
+                {...fadeIn}
+                initial={false}
+                key={`article-${article.id}`}
+                className="overflow-hidden shadow hover:shadow-lg transition border-2 border-foreground rounded-2xl"
               >
                 <div className="relative h-40 w-full">
                   <Image
@@ -60,32 +74,40 @@ export default function Blogs() {
                     {article.title}
                   </h3>
                   <p className="text-small line-clamp-3">{article.desc}</p>
-                  <Button className="inline-flex items-center gap-2 w-fit">
+                  <Button onClick={()=>router.push('/blogs/123')} className="inline-flex items-center gap-2 w-fit">
                     Read More
                     <ArrowRight className="w-4 h-4" />
                   </Button>
                 </div>
-              </div>
+              </motion.div>
             ))}
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
 
-        <div className="space-y-6">
+        <motion.div {...fadeIn} initial={false} className="space-y-6">
           <h3 className="text-xl font-bold">Popular</h3>
           {articles.map((a, i) => (
-            <div key={i} className="flex gap-4 items-start">
+            <motion.div
+              {...fadeIn}
+              initial={false}
+              key={`popular-${a.title}-${i}`}
+              className="flex gap-4 items-start"
+            >
               <span className="text-2xl font-bold text-primary">{i + 1}</span>
               <p className="text-sm font-medium leading-tight line-clamp-2">
                 {a.title}
               </p>
-            </div>
+            </motion.div>
           ))}
-        </div>
-        <SidebarBlog
-          recentPosts={articles?.slice(0, 3)}
-          categories={categories}
-        />
-      </div>
+        </motion.div>
+
+        <motion.div {...fadeIn} initial={false} key="sidebar-blog">
+          <SidebarBlog
+            recentPosts={articles?.slice(0, 3)}
+            categories={categories}
+          />
+        </motion.div>
+      </motion.div>
     </Container>
   );
 }

@@ -14,7 +14,7 @@ export const navLinks = [
       { name: 'About', href: '/about' },
       { name: 'Services', href: '/services' },
       { name: 'Blogs', href: '/blogs' },
-      { name: 'Blog Details', href: '/blog/modern-brand-strategy' },
+      { name: 'Blog Details', href: '/blogs/d123' },
       { name: 'Contact', href: '/contact' },
       { name: '404', href: '/not-found' },
     ],

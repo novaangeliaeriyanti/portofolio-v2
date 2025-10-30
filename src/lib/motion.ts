@@ -2,28 +2,32 @@ import { easeOut, easeIn, MotionProps } from 'framer-motion';
 
 export const fadeInUp: MotionProps = {
   initial: 'hidden',
-  whileInView: 'visible',
-  viewport: { once: true },
+  animate: 'visible',
   variants: {
     hidden: { opacity: 0, y: 30 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: easeOut } },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: easeOut },
+    },
   },
 };
 
 export const fadeIn: MotionProps = {
   initial: 'hidden',
-  whileInView: 'visible',
-  viewport: { once: true },
+  animate: 'visible',
   variants: {
     hidden: { opacity: 0 },
-    visible: { opacity: 1, transition: { duration: 0.5, ease: easeOut } },
+    visible: {
+      opacity: 1,
+      transition: { duration: 0.5, ease: easeOut },
+    },
   },
 };
 
 export const fadeScale: MotionProps = {
   initial: 'hidden',
-  whileInView: 'visible',
-  viewport: { once: true },
+  animate: 'visible',
   variants: {
     hidden: { opacity: 0, scale: 0.95 },
     visible: {
@@ -36,14 +40,11 @@ export const fadeScale: MotionProps = {
 
 export const staggerContainer: MotionProps = {
   initial: 'hidden',
-  whileInView: 'visible',
-  viewport: { once: true },
+  animate: 'visible',
   variants: {
     hidden: {},
     visible: {
-      transition: {
-        staggerChildren: 0.15,
-      },
+      transition: { staggerChildren: 0.15 },
     },
   },
 };
