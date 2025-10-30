@@ -2,6 +2,8 @@
 
 import Container from '@/components/ui/Container';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { heroBackgroundVariants, heroContentVariants } from '@/lib/motion';
 
 type HeroSlide = {
   badgeText?: string;
@@ -83,19 +85,33 @@ export default function HeroBanner({
         aria-label="Hero banner carousel"
       >
         <div className="absolute inset-0">
-          {slides.map((slide, idx) => (
-            <div
-              key={idx}
-              className={`absolute inset-0 bg-cover bg-center saturate-[1.05] contrast-[1.05] transition-opacity duration-400 ease-linear ${idx === activeIndex ? 'opacity-100' : 'opacity-0'}`}
-              style={{ backgroundImage: `url(${slide.backgroundImageUrl})` }}
-              aria-hidden={idx !== activeIndex}
-            />
-          ))}
+          <AnimatePresence mode="wait">
+            {slides.map((slide, idx) =>
+              idx === activeIndex ? (
+                <motion.div
+                  key={idx}
+                  className="absolute inset-0 bg-cover bg-center saturate-[1.05] contrast-[1.05]"
+                  style={{
+                    backgroundImage: `url(${slide.backgroundImageUrl})`,
+                  }}
+                  variants={heroBackgroundVariants}
+                  initial="enter"
+                  animate="center"
+                  exit="exit"
+                />
+              ) : null
+            )}
+          </AnimatePresence>
         </div>
-        <div
+        <motion.div
           className="relative bg-foreground/20 backdrop-blur-xs rounded-2xl w-full md:w-1/2 z-10 h-full flex flex-col items-center justify-center text-background text-center px-12 py-10 drop-shadow-[0_2px_8px_rgba(0,0,0,0.35)]"
           role="group"
           aria-label={`Slide ${activeIndex + 1} of ${slides.length}`}
+          key={activeIndex}
+          variants={heroContentVariants}
+          initial="hidden"
+          animate="visible"
+          exit="exit"
         >
           {activeSlide?.badgeText && (
             <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-background/20 text-background text-[12px] tracking-[0.08em] uppercase border border-white/30 backdrop-blur-[6px]">
@@ -129,7 +145,7 @@ export default function HeroBanner({
               </svg>
             </button>
           )}
-        </div>
+        </motion.div>
 
         <div
           className="absolute left-0 top-1/2 z-20 flex flex-col gap-[10px] p-4 bg-background rounded-r-xl "

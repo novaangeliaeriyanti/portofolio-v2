@@ -1,16 +1,26 @@
 'use client';
 
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import Container from '@/components/ui/Container';
 import { Button } from '@/components/ui/Button';
 import { articles } from '@/data/news';
+import { fadeIn, fadeInUp } from '@/lib/motion';
 
 export default function NewsList() {
   return (
     <Container className="py-16 space-y-8">
-      <div className=" mx-auto">
-        <div className="flex flex-col justify-center items-center mb-10">
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        className="mx-auto"
+      >
+        <motion.div
+          {...fadeInUp}
+          className="flex flex-col justify-center items-center mb-10"
+        >
           <h2 className="text-3xl font-bold">Recent news and events</h2>
           <a
             href="#"
@@ -19,10 +29,18 @@ export default function NewsList() {
             View All
             <ArrowRight className="w-4 h-4" />
           </a>
-        </div>
-        <div className="flex flex-col justify-center md:flex-row md:justify-between gap-10 mb-8">
+        </motion.div>
+
+        {/* HEADLINE + POPULAR */}
+        <motion.div
+          {...fadeIn}
+          className="flex flex-col justify-center md:flex-row md:justify-between gap-10 mb-8"
+        >
           {articles[0] && (
-            <div className="flex-2 rounded-2xl overflow-hidden relative min-h-[250px]">
+            <motion.div
+              {...fadeInUp}
+              className="flex-2 rounded-2xl overflow-hidden relative min-h-[250px]"
+            >
               <div className="relative h-64 md:h-full w-full">
                 {articles[0]?.image && (
                   <Image
@@ -43,10 +61,10 @@ export default function NewsList() {
                   {articles[0].title}
                 </h2>
               </div>
-            </div>
+            </motion.div>
           )}
 
-          <div className="flex-1 space-y-6">
+          <motion.div {...fadeInUp} className="flex-1 space-y-6">
             <h3 className="text-xl font-bold">Popular</h3>
             {articles.map((a, i) => (
               <div key={i} className="flex gap-4 items-start">
@@ -56,13 +74,14 @@ export default function NewsList() {
                 </p>
               </div>
             ))}
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <motion.div {...fadeIn} className="grid md:grid-cols-3 gap-8">
           {articles.slice(1, 4).map((article, i) => (
-            <div
+            <motion.div
               key={i}
+              {...fadeInUp}
               className="border-2 border-foreground rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300"
             >
               <div className="relative h-52 lg:h-72 w-full">
@@ -89,10 +108,10 @@ export default function NewsList() {
                   <ArrowRight className="w-4 h-4" />
                 </Button>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </Container>
   );
 }

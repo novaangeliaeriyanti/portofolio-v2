@@ -3,9 +3,11 @@
 import Image from 'next/image';
 import { Send } from 'lucide-react';
 import { useState } from 'react';
+import { motion } from 'framer-motion';
 import Container from '@/components/ui/Container';
 import { projectInquiryData as data } from '@/data/contact';
 import { FormData } from '@/types/types';
+import { fadeInUp, fadeScale, staggerContainer, fadeIn } from '@/lib/motion';
 
 export default function ProjectInquiry() {
   const [formData, setFormData] = useState<FormData>({
@@ -28,8 +30,11 @@ export default function ProjectInquiry() {
 
   return (
     <Container className="relative py-16 space-y-8 rounded-2xl overflow-hidden">
-      <div className="mx-auto grid lg:grid-cols-2 items-center gap-10">
-        <div className="relative z-10">
+      <motion.div
+        {...staggerContainer}
+        className="mx-auto grid lg:grid-cols-2 items-center gap-10"
+      >
+        <motion.div {...fadeInUp} className="relative z-10">
           <div className="mb-6">
             <p className="text-sm font-semibold uppercase text-primary">
               {data.eyebrow}
@@ -37,7 +42,11 @@ export default function ProjectInquiry() {
             <h2 className="text-3xl font-bold mt-1">{data.title}</h2>
           </div>
 
-          <form onSubmit={handleSubmit} className="space-y-4">
+          <motion.form
+            {...fadeScale}
+            onSubmit={handleSubmit}
+            className="space-y-4"
+          >
             {data.formFields.map((field, i) =>
               field.type === 'textarea' ? (
                 <textarea
@@ -45,7 +54,7 @@ export default function ProjectInquiry() {
                   name={field.name}
                   placeholder={field.placeholder}
                   rows={4}
-                  value={field.name as keyof FormData}
+                  value={formData[field.name as keyof FormData]}
                   onChange={handleChange}
                   className="w-full px-4 py-3 rounded-lg border border-zinc-200 focus:border-orange-500 focus:ring-2 focus:ring-orange-500/30 outline-none transition resize-none"
                 />
@@ -55,7 +64,7 @@ export default function ProjectInquiry() {
                   type={field.type}
                   name={field.name}
                   placeholder={field.placeholder}
-                  value={field.name as keyof FormData}
+                  value={formData[field.name as keyof FormData]}
                   onChange={handleChange}
                   required
                   className="w-full px-4 py-3 rounded-lg border border-zinc-200 focus:border-orange-500 focus:ring-2 focus:ring-orange-500/30 outline-none transition"
@@ -70,11 +79,11 @@ export default function ProjectInquiry() {
               {data.button.label}
               <Send className="w-4 h-4" />
             </button>
-          </form>
-        </div>
+          </motion.form>
+        </motion.div>
 
-        <div className="relative grid grid-rows-2 gap-4">
-          <div className="pl-5">
+        <motion.div {...fadeIn} className="relative grid grid-rows-2 gap-4">
+          <motion.div {...fadeScale} className="pl-5">
             <Image
               src={data.images[0]}
               alt="Project visual 1"
@@ -82,8 +91,8 @@ export default function ProjectInquiry() {
               height={300}
               className="object-cover w-full h-[200px] rounded-2xl shadow-md"
             />
-          </div>
-          <div className="pr-5">
+          </motion.div>
+          <motion.div {...fadeScale} className="pr-5">
             <Image
               src={data.images[1]}
               alt="Project visual 2"
@@ -91,17 +100,9 @@ export default function ProjectInquiry() {
               height={300}
               className="object-cover w-full h-[200px] rounded-2xl shadow-md"
             />
-          </div>
-        </div>
-      </div>
-
-      <div
-        className="absolute top-0 left-0 w-full h-full opacity-5 pointer-events-none"
-        style={{
-          backgroundImage: `url('${data.backgroundPattern}')`,
-          backgroundRepeat: 'repeat',
-        }}
-      />
+          </motion.div>
+        </motion.div>
+      </motion.div>
     </Container>
   );
 }

@@ -3,32 +3,27 @@
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { ArrowLeft } from 'lucide-react';
+import { fadeScale, fadeIn } from '@/lib/motion';
 
 export default function NotFound() {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-background text-foreground px-6 text-center relative overflow-hidden">
       <motion.h1
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.4 }}
+        {...fadeScale}
         className="text-[110px] md:text-[140px] font-extrabold leading-none text-primary relative z-10"
       >
         404
       </motion.h1>
 
       <motion.h2
-        initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.2 }}
+        {...fadeIn}
         className="text-2xl md:text-3xl font-semibold mt-2 relative z-10"
       >
         Page Not Found
       </motion.h2>
 
       <motion.p
-        initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.3 }}
+        {...fadeIn}
         className="text-muted-foreground mt-3 max-w-md relative z-10"
       >
         The page you’re looking for doesn’t exist or has been moved. Please
@@ -36,9 +31,7 @@ export default function NotFound() {
       </motion.p>
 
       <motion.div
-        initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.4 }}
+        {...fadeIn}
         className="mt-8 relative z-10"
       >
         <Link

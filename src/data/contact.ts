@@ -13,5 +13,4 @@ export const projectInquiryData = {
     'https://images.pexels.com/photos/15071423/pexels-photo-15071423.jpeg',
     'https://images.pexels.com/photos/15071424/pexels-photo-15071424.jpeg',
   ],
-  backgroundPattern: 'https://www.transparenttextures.com/patterns/graphy.png',
 };

@@ -2,15 +2,20 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
 import { ArrowRight, Facebook, Linkedin, Twitter } from 'lucide-react';
 import Container from '@/components/ui/Container';
 import { leadershipTeam as data } from '@/data/about';
+import { fadeInUp, fadeScale, staggerContainer } from '@/lib/motion';
 
 export default function Teams() {
   return (
-    <section className="py-16">
+    <section className="py-16 overflow-hidden">
       <Container>
-        <div className="flex flex-col justify-center items-center text-center mb-10 md:mb-20">
+        <motion.div
+          {...fadeInUp}
+          className="flex flex-col justify-center items-center text-center mb-10 md:mb-20"
+        >
           <div>
             <p className="text-sm font-semibold uppercase text-primary">
               Our Experts
@@ -26,21 +31,20 @@ export default function Teams() {
             {data.button.label}
             <ArrowRight className="w-4 h-4" />
           </a>
-        </div>
+        </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <motion.div {...staggerContainer} className="grid md:grid-cols-3 gap-8">
           {data.members.slice(0, 3).map((member, i) => (
-            <div
+            <motion.div
               key={i}
+              {...fadeScale}
+              transition={{ duration: 0.5, delay: i * 0.2 }}
               className={`relative group flex flex-col transition-all duration-500 ${
                 i === 1 ? 'md:translate-y-[-40px]' : ''
               }`}
             >
               {i === 1 && (
-                <div
-                  className="bg-primary text-white rounded-t-3xl p-4 w-full text-center
-                  shadow-[0_8px_30px_rgba(255,145,0,0.55)]"
-                >
+                <div className="bg-primary text-white rounded-t-3xl p-4 w-full text-center shadow-[0_8px_30px_rgba(255,145,0,0.55)]">
                   <h3 className="text-lg font-semibold">{member.name}</h3>
                   <p className="text-sm opacity-80">{member.role}</p>
                   <div className="flex justify-center gap-3 pt-3">
@@ -80,10 +84,7 @@ export default function Teams() {
               </div>
 
               {i !== 1 && (
-                <div
-                  className="bg-primary text-white p-4 w-full text-center
-                  shadow-[0_8px_30px_rgba(255,145,0,0.55)] rounded-b-3xl"
-                >
+                <div className="bg-primary text-white p-4 w-full text-center shadow-[0_8px_30px_rgba(255,145,0,0.55)] rounded-b-3xl">
                   <h3 className="text-lg font-semibold">{member.name}</h3>
                   <p className="text-sm opacity-80">{member.role}</p>
                   <div className="flex justify-center gap-3 pt-3">
@@ -108,9 +109,9 @@ export default function Teams() {
                   </div>
                 </div>
               )}
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </Container>
     </section>
   );
