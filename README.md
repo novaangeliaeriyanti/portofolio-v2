@@ -1,66 +1,164 @@
-# 🏢 ModernCorp – Company Profile Website
+# 🏭 IndustrialCorp -- Industrial Company Profile Website Template
 
-**ModernCorp** is a modern, responsive **company profile website** built with **Next.js 15**, **TypeScript**, and **Tailwind CSS 4**.  
-It is designed to present businesses, agencies, or startups with a professional, clean, and animated user experience.
+IndustrialCorp is a modern, responsive **Industrial Company Profile
+Website Template** built using **Next.js 15**, **TypeScript**, and
+**Tailwind CSS 4**.\
+It is designed for companies in **manufacturing, construction,
+engineering, oil & gas, energy, and industrial services** to present a
+professional and clean online presence.
 
----
+------------------------------------------------------------------------
 
-## 🖥️ Live Demo
+## 🔗 Live Demo
 
-🌐 **[https://portofolio-v2-dusky.vercel.app](https://portofolio-v2-dusky.vercel.app)**  
-_(Hosted on Vercel)_
+🌐 https://portofolio-v2-dusky.vercel.app
 
-![ModernCorp Preview](https://via.placeholder.com/1200x600?text=ModernCorp+Preview)
+------------------------------------------------------------------------
 
----
+## 📂 Project Structure
 
-## 🚀 Tech Stack
+    src/
+     ├── app/
+     │   ├── (site)/
+     │   │   ├── about/
+     │   │   ├── blogs/
+     │   │   ├── contact/
+     │   │   ├── home/
+     │   │   ├── services/
+     │   │   └── page.tsx
+     │   ├── layout.tsx
+     │   └── not-found.tsx
+     │
+     ├── components/
+     │   ├── layout/
+     │   │   ├── Footer.tsx
+     │   │   ├── Header.tsx
+     │   │   └── PageWrapper.tsx
+     │   ├── sections/
+     │   │   ├── home1/
+     │   │   ├── home2/
+     │   │   ├── HeroBanner.tsx
+     │   │   ├── NewsList.tsx
+     │   │   ├── Services.tsx
+     │   │   └── Teams.tsx
+     │   ├── shared/
+     │   └── ui/
+     │
+     ├── data/
+     ├── lib/
+     ├── styles/
+     └── types/
 
-| Category             | Technology                                                |
-| -------------------- | --------------------------------------------------------- |
-| **Framework**        | [Next.js 15](https://nextjs.org/)                         |
-| **Language**         | [TypeScript](https://www.typescriptlang.org/)             |
-| **Styling**          | [Tailwind CSS 4](https://tailwindcss.com/)                |
-| **Animation**        | [Framer Motion](https://www.framer.com/motion/)           |
-| **Icons**            | [Lucide React](https://lucide.dev/)                       |
-| **UI Library**       | [Radix UI](https://www.radix-ui.com/)                     |
-| **Theme Management** | [next-themes](https://github.com/pacocoursey/next-themes) |
-| **Code Quality**     | ESLint + Prettier                                         |
+------------------------------------------------------------------------
 
----
+## 🖥️ Tech Stack
+
+  -----------------------------------------------------------------------
+  Category           Technology
+  ------------------ ----------------------------------------------------
+  **Framework**      Next.js 15 (App Router)
+
+  **Language**       TypeScript
+
+  **Styling**        Tailwind CSS 4
+
+  **Animation**      Framer Motion
+
+  **Icons**          Lucide React
+
+  **UI Library**     Radix UI
+
+  **Theme**          next-themes (Light/Dark Mode)
+
+  **Code Quality**   ESLint + Prettier
+  -----------------------------------------------------------------------
+
+------------------------------------------------------------------------
 
 ## 🌟 Features
 
-- 🧭 Modular and reusable components
-- 🌗 Dark / Light mode toggle
-- 🎬 Smooth page and section transitions
-- 📱 Fully responsive layout
-- ⚡ Fast performance with Next.js 15 App Router
-- 🧩 Two homepage variants: **Corporate** and **Startup**
-- 🔍 SEO optimized & accessible
+-   Modern design built for industrial companies\
+-   Fully responsive layout\
+-   Dark & Light Mode\
+-   Smooth animations with Framer Motion\
+-   SEO-ready\
+-   Modular and scalable components\
+-   Two homepage variants\
+-   High-performance with Next.js 15
 
----
+------------------------------------------------------------------------
 
-## ⚙️ Next.js Configuration
+## 🖼️ Image Configuration
 
-Optimized for remote image loading (e.g., Unsplash):
+Supports images from **Unsplash**, **Pexels**, and Canva exports:
 
-```ts
-import type { NextConfig } from 'next';
-
-const nextConfig: NextConfig = {
-  reactStrictMode: true,
-  images: {
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'images.unsplash.com',
-        port: '',
-        pathname: '/**',
-      },
-    ],
-  },
-};
-
-export default nextConfig;
+``` ts
+images: {
+  remotePatterns: [
+    {
+      protocol: 'https',
+      hostname: 'images.unsplash.com',
+      port: '',
+      pathname: '/**',
+    },
+    {
+      protocol: 'https',
+      hostname: 'images.pexels.com',
+      port: '',
+      pathname: '/**',
+    },
+  ],
+}
 ```
+
+------------------------------------------------------------------------
+
+## 🚀 Installation & Setup
+
+``` bash
+cd Template
+npm install
+npm run dev
+```
+
+Visit:\
+http://localhost:3000
+
+------------------------------------------------------------------------
+
+## 🏗️ Build & Deploy
+
+### Production Build
+
+``` bash
+npm run build
+npm start
+```
+
+------------------------------------------------------------------------
+
+## 📦 Reusable Components
+
+-   Hero Banner\
+-   Services & Capabilities\
+-   Projects / Case Studies\
+-   Team Section\
+-   Blog / News\
+-   Contact Form\
+-   Industrial Footer\
+-   Responsive Header with Navigation & Submenu
+
+------------------------------------------------------------------------
+
+## 🔧 Customization
+
+-   Update branding in `/data`\
+-   Modify UI components in `/components/ui`\
+-   Manage homepage sections in `/components/sections/home1` and
+    `home2`\
+-   Add pages inside the `(site)` folder
+-   Modify styles text, font, or color in `/styles/global.css`
+-   Modify animation `/lib/motion.ts`
+-   Add SEO config `/lib/seo.config.ts`
+
+------------------------------------------------------------------------

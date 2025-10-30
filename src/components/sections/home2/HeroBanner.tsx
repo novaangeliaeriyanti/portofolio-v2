@@ -4,19 +4,7 @@ import Container from '@/components/ui/Container';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { heroBackgroundVariants, heroContentVariants } from '@/lib/motion';
-
-type HeroSlide = {
-  badgeText?: string;
-  title: string;
-  ctaLabel?: string;
-  onCtaClick?: () => void;
-  backgroundImageUrl: string;
-};
-
-type HeroBannerProps = {
-  slides: HeroSlide[];
-  autoPlayMs?: number;
-};
+import { HeroBannerProps } from '@/types/types';
 
 export default function HeroBanner({
   slides,

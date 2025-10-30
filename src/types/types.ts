@@ -18,3 +18,21 @@ export type FormData = {
   email: string;
   message: string;
 };
+
+export type HeroSlide = {
+  badgeText?: string;
+  title: string;
+  ctaLabel?: string;
+  onCtaClick?: () => void;
+  backgroundImageUrl: string;
+};
+
+export type HeroBannerProps = {
+  slides: HeroSlide[];
+  autoPlayMs?: number;
+};
+
+export interface SidebarBlogProps {
+  categories: string[];
+  recentPosts: { title: string; slug?: string }[];
+}

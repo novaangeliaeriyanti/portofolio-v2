@@ -2,11 +2,7 @@
 
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-
-interface SidebarBlogProps {
-  categories: string[];
-  recentPosts: { title: string; slug?: string }[];
-}
+import { SidebarBlogProps } from '@/types/types';
 
 export default function SidebarBlog({
   categories,
