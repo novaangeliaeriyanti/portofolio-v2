@@ -9,8 +9,10 @@ import Logo from '../ui/Logo';
 import { navLinks } from '@/data/navbar';
 import ThemeToggle from '../ui/ThemeToggle';
 import Container from '../ui/Container';
+import { useRouter } from 'next/navigation';
 
 export default function Header() {
+  const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
   const [openSubmenu, setOpenSubmenu] = useState<string | null>(null);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
@@ -65,11 +67,14 @@ export default function Header() {
               {navLinks.map((link) => (
                 <div key={link.name}>
                   <button
-                    onClick={() =>
-                      setOpenSubmenu(
-                        openSubmenu === link.name ? null : link.name
-                      )
-                    }
+                    onClick={() => {
+                      if (link.children) {
+                        setOpenSubmenu(openSubmenu === link.name ? null : link.name);
+                      } else {
+                        router.push(link.href);
+                        setIsOpen(false);
+                      }
+                    }}
                     className="w-full flex justify-between items-center text-sm font-medium hover:text-primary transition-colors"
                   >
                     <span className="flex-1 text-left">{link.name}</span>

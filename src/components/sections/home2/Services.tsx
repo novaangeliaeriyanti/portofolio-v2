@@ -26,7 +26,7 @@ export default function Services() {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
-        className="flex justify-between items-center gap-4"
+        className="flex flex-col md:flex-row md:justify-between items-center gap-4"
       >
         <div className="flex-1">
           <h3 className="text-sm font-semibold tracking-wide text-primary uppercase mb-2">
