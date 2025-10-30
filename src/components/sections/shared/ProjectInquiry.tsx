@@ -24,7 +24,6 @@ export default function ProjectInquiry() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
     setFormData({ name: '', email: '', message: '' });
   };
 

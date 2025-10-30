@@ -5,7 +5,7 @@ export interface CardData {
 }
 
 export interface Article {
-  id:string;
+  id: string;
   title: string;
   desc: string;
   date: string;

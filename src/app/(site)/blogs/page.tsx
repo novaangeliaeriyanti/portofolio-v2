@@ -11,13 +11,25 @@ import { fadeIn } from '@/lib/motion';
 import { useRouter } from 'next/navigation';
 
 export default function Blogs() {
-  const router = useRouter()
+  const router = useRouter();
   if (!articles || articles?.length === 0) return null;
   return (
     <Container className="py-20">
-      <motion.div {...fadeIn} initial={false} className="grid lg:grid-cols-5 gap-10">
-        <motion.div {...fadeIn} initial={false} className="lg:col-span-3 space-y-10">
-          <motion.div {...fadeIn} initial={false} className="flex justify-between items-center">
+      <motion.div
+        {...fadeIn}
+        initial={false}
+        className="grid lg:grid-cols-5 gap-10"
+      >
+        <motion.div
+          {...fadeIn}
+          initial={false}
+          className="lg:col-span-3 space-y-10"
+        >
+          <motion.div
+            {...fadeIn}
+            initial={false}
+            className="flex justify-between items-center"
+          >
             <h2 className="text-3xl font-bold">Recent news and events</h2>
           </motion.div>
 
@@ -28,7 +40,10 @@ export default function Blogs() {
               key={`headline-${articles[0].id}`}
               className="rounded-2xl overflow-hidden relative"
             >
-              <div key={`headline-${articles[0].id}`} className="relative h-96 w-full">
+              <div
+                key={`headline-${articles[0].id}`}
+                className="relative h-96 w-full"
+              >
                 <Image
                   src={articles[0].image}
                   alt={articles[0].title}
@@ -49,7 +64,11 @@ export default function Blogs() {
             </motion.div>
           )}
 
-          <motion.div {...fadeIn} initial={false} className="grid md:grid-cols-3 gap-6">
+          <motion.div
+            {...fadeIn}
+            initial={false}
+            className="grid md:grid-cols-3 gap-6"
+          >
             {articles.slice(1).map((article, i) => (
               <motion.div
                 {...fadeIn}
@@ -74,7 +93,10 @@ export default function Blogs() {
                     {article.title}
                   </h3>
                   <p className="text-small line-clamp-3">{article.desc}</p>
-                  <Button onClick={()=>router.push('/blogs/123')} className="inline-flex items-center gap-2 w-fit">
+                  <Button
+                    onClick={() => router.push('/blogs/123')}
+                    className="inline-flex items-center gap-2 w-fit"
+                  >
                     Read More
                     <ArrowRight className="w-4 h-4" />
                   </Button>

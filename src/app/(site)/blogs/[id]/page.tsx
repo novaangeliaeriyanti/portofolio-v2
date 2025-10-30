@@ -20,10 +20,7 @@ export default function DetailBlogs() {
   return (
     <Container className="py-20">
       <div className="grid lg:grid-cols-4 gap-12">
-        <motion.div
-          {...fadeIn}
-          className="lg:col-span-3 space-y-10"
-        >
+        <motion.div {...fadeIn} className="lg:col-span-3 space-y-10">
           <div className="space-y-4">
             <div className="relative w-full h-[400px] rounded-2xl overflow-hidden shadow-md">
               <Image

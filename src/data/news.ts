@@ -130,12 +130,14 @@ export const blogDetail = {
     },
     {
       title: 'How AI Is Revolutionizing Material Management',
-      image: 'https://images.pexels.com/photos/1108101/pexels-photo-1108101.jpeg',
+      image:
+        'https://images.pexels.com/photos/1108101/pexels-photo-1108101.jpeg',
       date: 'Aug 30, 2025',
     },
     {
       title: 'Improving Site Safety with Automation',
-      image: 'https://images.pexels.com/photos/2760241/pexels-photo-2760241.jpeg',
+      image:
+        'https://images.pexels.com/photos/2760241/pexels-photo-2760241.jpeg',
       date: 'Jul 12, 2025',
     },
   ],

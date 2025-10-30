@@ -10,7 +10,7 @@ import { fadeInUp, fadeScale, staggerContainer, fadeIn } from '@/lib/motion';
 import { useRouter } from 'next/navigation';
 
 export default function NewsList() {
-  const router = useRouter()
+  const router = useRouter();
   return (
     <Container className="pb-16 space-y-8">
       <motion.div {...staggerContainer} className="mx-auto">
@@ -58,7 +58,7 @@ export default function NewsList() {
                   {...fadeIn}
                   className="mt-5 inline-flex items-center gap-2 w-fit"
                 >
-                  <Button onClick={()=>router.push('/blogs/123')}>
+                  <Button onClick={() => router.push('/blogs/123')}>
                     Read More
                     <ArrowRight className="w-4 h-4" />
                   </Button>

@@ -1,8 +1,9 @@
 export const installationServicesData = {
-  headingEyebrow: "INDUSTRY EXPERTS AT WORK",
-  headingTitle: "Comprehensive Industrial & Infrastructure Solutions",
+  headingEyebrow: 'INDUSTRY EXPERTS AT WORK',
+  headingTitle: 'Comprehensive Industrial & Infrastructure Solutions',
   intro:
-    "We deliver end-to-end industrial and infrastructure services — from equipment installation, system integration, to maintenance. Our skilled team ensures every project runs efficiently, safely, and meets the highest industry standards.",  cards: [
+    'We deliver end-to-end industrial and infrastructure services — from equipment installation, system integration, to maintenance. Our skilled team ensures every project runs efficiently, safely, and meets the highest industry standards.',
+  cards: [
     {
       image:
         'https://images.pexels.com/photos/27102105/pexels-photo-27102105.jpeg',
@@ -43,7 +44,7 @@ export const installationServicesData = {
       desc: 'From installation and system integration to testing, maintenance, and documentation — we cover it all.',
       icon: 'package',
     },
-  ],  
+  ],
   ctaPrimary: { label: 'Book Now', href: '#' },
   contactPhone: { label: '+1 000 XXX XXX XXX', href: 'tel:+1000XXXXXXXXX' },
 };

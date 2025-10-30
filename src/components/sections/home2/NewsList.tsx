@@ -10,7 +10,7 @@ import { fadeIn, fadeInUp } from '@/lib/motion';
 import { useRouter } from 'next/navigation';
 
 export default function NewsList() {
-  const router = useRouter()
+  const router = useRouter();
   return (
     <Container className="py-16 space-y-8">
       <motion.div
@@ -104,7 +104,10 @@ export default function NewsList() {
                 </h3>
                 <p className="text-small line-clamp-3">{article.desc}</p>
 
-                <Button onClick={()=>router.push('/blogs/123')} className="mt-5 inline-flex items-center gap-2 w-fit">
+                <Button
+                  onClick={() => router.push('/blogs/123')}
+                  className="mt-5 inline-flex items-center gap-2 w-fit"
+                >
                   Read More
                   <ArrowRight className="w-4 h-4" />
                 </Button>
